@@ -182,7 +182,10 @@ function footScript(course) {
       'function prog(){if(!bar)return;var max=d.scrollHeight-d.clientHeight;var p=max>0?(d.scrollTop||document.body.scrollTop)/max:0;bar.style.width=(Math.max(0,Math.min(1,p))*100).toFixed(2)+"%";}\n' +
       'var links=[].slice.call(document.querySelectorAll(".course-toc a[data-lesson]"));\n' +
       'var secs=links.map(function(a){return document.getElementById(a.getAttribute("href").slice(1));}).filter(Boolean);\n' +
-      'function spy(){var cur=null;for(var i=0;i<secs.length;i++){if(secs[i].getBoundingClientRect().top<=150)cur=secs[i];}links.forEach(function(a){a.classList.toggle("active",!!cur&&a.getAttribute("href")==="#"+cur.id);});}\n' +
+      // Keep the active chip visible inside the horizontally-scrolling TOC bar (mobile).
+      'function centerChip(a){var ol=a.closest("ol");if(!ol||ol.scrollWidth<=ol.clientWidth+2)return;var ar=a.getBoundingClientRect(),or=ol.getBoundingClientRect();ol.scrollBy({left:(ar.left-or.left)-(or.width-ar.width)/2,behavior:"smooth"});}\n' +
+      'var lastSpy=null;\n' +
+      'function spy(){var cur=null;for(var i=0;i<secs.length;i++){if(secs[i].getBoundingClientRect().top<=150)cur=secs[i];}links.forEach(function(a){a.classList.toggle("active",!!cur&&a.getAttribute("href")==="#"+cur.id);});var id=cur?cur.id:null;if(id!==lastSpy){lastSpy=id;if(id){var act=null;links.forEach(function(a){if(a.getAttribute("href")==="#"+id)act=a;});if(act)centerChip(act);}}}\n' +
       'var main=document.querySelector(".course-wrap[data-course]");\n' +
       'var slug=main?main.getAttribute("data-course"):null,total=main?(+main.getAttribute("data-lessons")||0):0;\n' +
       'var lessonEls=[].slice.call(document.querySelectorAll(".course-main .lesson[data-lesson]"));\n' +
