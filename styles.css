@@ -711,7 +711,11 @@ body.is-browsing .hero { display: none; }
 @media (max-width: 720px) {
   .hero { padding-top: 26px; }
   .hero h1 { font-size: 24px; }
-  .nl-inner { flex-direction: column; align-items: stretch; }
+  /* Stack copy over form. Reset the flex-basis (1 1 320px / 280px) that was
+     sized for a horizontal row — in a column it becomes a huge VERTICAL size,
+     ballooning the input and button to ~300px tall. */
+  .nl-inner { flex-direction: column; align-items: stretch; gap: 16px; }
+  .nl-copy, .nl-form { flex: 0 0 auto; }
   .nl-form { max-width: none; }
 }
 
@@ -940,7 +944,9 @@ body.is-browsing .hero { display: none; }
 .cta-copy p { margin: 0; font-size: 13.5px; color: var(--text-dim); }
 
 @media (max-width: 860px) {
-  .course-layout { grid-template-columns: 1fr; gap: 4px; }
+  /* minmax(0,…) is essential: a bare 1fr expands to fit the no-wrap TOC chip
+     bar (min-content), blowing the page width out to thousands of px. */
+  .course-layout { grid-template-columns: minmax(0, 1fr); gap: 4px; }
   .course-main { max-width: none; }
   /* CONTENTS moves to the top as a sticky, horizontally-scrolling chip bar */
   .course-side { position: sticky; top: var(--header-h, 60px); z-index: 6; margin: 0 -22px 10px; }
