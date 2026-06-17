@@ -956,6 +956,58 @@ body.is-browsing .hero { display: none; }
 .course-fig { margin: 20px 0 22px; }
 .course-fig img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--border); background: #14161c; }
 .course-fig figcaption { margin-top: 9px; font-size: 12.3px; color: var(--text-faint); text-align: center; line-height: 1.45; }
+
+/* ===================================================== mobile-friendliness */
+
+/* iOS Safari zooms the page when focusing an input < 16px. Bump form inputs
+   to 16px on small screens to keep the layout stable. */
+@media (max-width: 720px) {
+  .search input,
+  .nl-form input,
+  .modal-card input,
+  .modal-card textarea,
+  .modal-card select { font-size: 16px; }
+}
+
+/* Touch devices (no hover): the per-card "hide" (×) and "save" (★) buttons are
+   hover-revealed on desktop — keep them visible here, and drop sticky-hover
+   lift/scale that would otherwise stay stuck after a tap. */
+@media (hover: none) {
+  .card:hover { transform: none; background: var(--card); box-shadow: none; }
+  .card:hover::before { width: 4px; opacity: 0.95; }
+  .card:active { background: var(--card-hover); }
+  .card-star, .card-x { opacity: 0.6; }
+  .card-star.on { opacity: 1; }
+}
+
+/* Comfortable spacing and type on small phones. */
+@media (max-width: 480px) {
+  .bar { padding-left: 15px; padding-right: 15px; }
+  .subbar { padding-left: 15px; padding-right: 15px; }
+  .browse { padding-left: 15px; padding-right: 15px; }
+  .hero { padding-left: 15px; padding-right: 15px; }
+  .newsletter,
+  .learn-teaser,
+  .faq,
+  .legal,
+  .learn-wrap,
+  .course-wrap,
+  .tool-wrap { padding-left: 15px; padding-right: 15px; }
+
+  .hero { padding-top: 26px; }
+  .hero h1 { font-size: 25px; }
+  .hero p { font-size: 14px; }
+  .sec-title { font-size: 17px; }
+  .brand-text small { display: none; }   /* reclaim topbar width */
+
+  /* keep the course CONTENTS chip-bar flush with the narrower gutter */
+  .course-side { margin-left: -15px; margin-right: -15px; }
+  .course-toc { padding-left: 15px; padding-right: 15px; }
+  .course-toc .toc-text { max-width: 46vw; }
+
+  /* stack the Category / Group fields in the add-link modal */
+  .modal-card .row { flex-direction: column; gap: 0; }
+}
 /* fade-in when scrolled into view (JS adds .reveal then .in; default visible for no-JS / reduced-motion) */
 .course-fig.reveal { opacity: 0; transform: translateY(12px); }
 .course-fig.reveal.in { opacity: 1; transform: none; transition: opacity 0.55s ease, transform 0.55s ease; }
