@@ -532,12 +532,25 @@ a { color: inherit; }
 
 /* --------------------------------------------------------------- mobile */
 @media (max-width: 720px) {
-  .bar { flex-wrap: wrap; gap: 12px; }
+  .bar { flex-wrap: wrap; gap: 10px; padding-top: 11px; padding-bottom: 11px; }
   .search { order: 3; max-width: none; flex-basis: 100%; margin-left: 0; }
+  .search input { padding-top: 10px; padding-bottom: 10px; }
   .brand { flex: 1; }
   .status { display: none; }
   .grid { grid-template-columns: 1fr; }
   .add-btn span { display: none; }
+
+  /* Header takes far less vertical space on phones:
+     filters become one tidy edge-to-edge scrolling row instead of wrapping,
+     and the grid/list toggle is hidden (the layout is single-column anyway). */
+  .subbar { gap: 10px; padding-bottom: 10px; }
+  .filters {
+    flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; margin: 0 -22px; padding: 2px 22px;
+  }
+  .filters::-webkit-scrollbar { display: none; }
+  .pill { flex: 0 0 auto; }
+  .subbar-right { display: none; }
 }
 
 /* --------------------------------------------------- affiliate / legal */
@@ -1007,6 +1020,9 @@ body.is-browsing .hero { display: none; }
 
   /* stack the Category / Group fields in the add-link modal */
   .modal-card .row { flex-direction: column; gap: 0; }
+
+  /* keep the scrolling filter row flush with the narrower gutter */
+  .filters { margin-left: -15px; margin-right: -15px; padding-left: 15px; padding-right: 15px; }
 }
 /* fade-in when scrolled into view (JS adds .reveal then .in; default visible for no-JS / reduced-motion) */
 .course-fig.reveal { opacity: 0; transform: translateY(12px); }
