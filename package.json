@@ -1,0 +1,12 @@
+{
+  "name": "market-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Curated directory of crypto & stock-market research tools, with a static SEO build.",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}

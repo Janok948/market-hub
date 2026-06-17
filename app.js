@@ -12,7 +12,12 @@
     view:    'marketHub.view.v1'
   };
 
-  // Newsletter: paste your form endpoint (Formspree, Buttondown, Beehiiv, Netlify Forms, etc.).
+  // Newsletter endpoint. Two supported options:
+  //   1. No backend — paste a provider URL (Formspree, Buttondown, Beehiiv, ConvertKit,
+  //      Netlify Forms). The form is POSTed as multipart, which these accept as-is.
+  //        var NEWSLETTER_ENDPOINT = 'https://formspree.io/f/XXXXXXX';
+  //   2. Own your list — use the bundled Supabase function (see api/subscribe.js):
+  //        var NEWSLETTER_ENDPOINT = '/api/subscribe';
   // Leave '' for demo mode — the form validates and thanks the user but stores nothing.
   var NEWSLETTER_ENDPOINT = '';
 
@@ -571,7 +576,12 @@
     }
     var btn = form.querySelector('button');
     btn.disabled = true; btn.textContent = '…';
-    fetch(NEWSLETTER_ENDPOINT, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) })
+    // Our own /api/* endpoint expects JSON; third-party providers expect a form post.
+    var ownApi = /^\/api\//.test(NEWSLETTER_ENDPOINT);
+    var opts = ownApi
+      ? { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ email: email }) }
+      : { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) };
+    fetch(NEWSLETTER_ENDPOINT, opts)
       .then(function (r) { if (!r.ok) throw new Error('bad status'); subscribeDone(form, note, false); })
       .catch(function () {
         note.textContent = 'Something went wrong — please try again.';
