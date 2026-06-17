@@ -144,6 +144,9 @@ var CLOCK_ICON = '<svg class="mi" viewBox="0 0 24 24" width="13" height="13" fil
 var LAYERS_ICON = '<svg class="mi" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>';
 var CHECK_ICON = '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 6.5"/></svg>';
 
+// Cookie-consent banner injected on every generated page (same look/key as the homepage).
+var CONSENT_HTML = '<p class="consent-text"><span class="consent-emoji" aria-hidden="true">🍪</span> We use cookies and local storage to remember your preferences and keep Market Hub working. Nothing is shared or sold. <a href="/index.html#faq">Learn more</a>.</p><div class="consent-actions"><button class="btn" type="button" data-c="declined">Decline</button><button class="btn primary" type="button" data-c="accepted">Accept</button></div>';
+
 // Consistent top bar for every generated sub-page. active: 'tools' | 'learn'.
 function siteHead(active, prefix) {
   function link(key, href, label) {
@@ -175,6 +178,9 @@ function footScript(course) {
     'function writeC(o){try{localStorage.setItem(CK,JSON.stringify(o));}catch(e){}}\n' +
     'function fillCards(){var p=readC();[].forEach.call(document.querySelectorAll(".course-card[data-course]"),function(c){var s=c.getAttribute("data-course"),t=+c.getAttribute("data-lessons")||0,n=Math.min(p[s]||0,t),pct=t?Math.round(n/t*100):0;var bar=c.querySelector(".cc-bar > i"),st=c.querySelector(".cc-status");if(bar)bar.style.width=pct+"%";c.classList.remove("is-done","is-progress");if(st){if(n<=0){st.textContent="Not started";}else if(n>=t){st.innerHTML=CHK+" Completed";c.classList.add("is-done");}else{st.textContent=n+" / "+t+" lessons";c.classList.add("is-progress");}}});}\n' +
     'fillCards();\n';
+  // Cookie-consent banner (shown once; choice remembered in localStorage).
+  s += 'var CC="marketHub.consent.v1";\n' +
+    'try{if(localStorage.getItem(CC)==null){var cb=document.createElement("div");cb.className="consent";cb.setAttribute("role","dialog");cb.setAttribute("aria-label","Cookie notice");cb.innerHTML=' + JSON.stringify(CONSENT_HTML) + ';document.body.appendChild(cb);cb.addEventListener("click",function(e){var t=e.target.closest("[data-c]");if(!t)return;try{localStorage.setItem(CC,JSON.stringify(t.getAttribute("data-c")));}catch(er){}cb.parentNode.removeChild(cb);});}}catch(e){}\n';
   if (course) {
     s += 'var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;\n' +
       'function setHH(){var t=document.querySelector(".topbar");if(t)d.style.setProperty("--header-h",t.offsetHeight+"px");}setHH();window.addEventListener("resize",setHH);\n' +

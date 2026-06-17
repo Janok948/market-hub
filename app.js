@@ -9,7 +9,8 @@
     hidden:  'marketHub.hidden.v1',
     theme:   'marketHub.theme.v1',
     starred: 'marketHub.starred.v1',
-    view:    'marketHub.view.v1'
+    view:    'marketHub.view.v1',
+    consent: 'marketHub.consent.v1'
   };
 
   // Newsletter endpoint. Two supported options:
@@ -867,6 +868,17 @@
       });
     }
     onScroll();
+
+    // Cookie consent: show once, remember the choice (no tracking is loaded either way).
+    var consent = document.getElementById('consent');
+    if (consent && load(STORE.consent, null) == null) {
+      consent.hidden = false;
+      var decide = function (choice) { save(STORE.consent, choice); consent.hidden = true; };
+      var ca = document.getElementById('consentAccept');
+      var cd = document.getElementById('consentDecline');
+      if (ca) ca.addEventListener('click', function () { decide('accepted'); });
+      if (cd) cd.addEventListener('click', function () { decide('declined'); });
+    }
 
     render();
     animateCounts();

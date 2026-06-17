@@ -306,6 +306,14 @@
 
   <button id="toTop" class="to-top" type="button" aria-label="Back to top" hidden>&#8593;</button>
 
+  <div class="consent" id="consent" role="dialog" aria-label="Cookie notice" aria-live="polite" hidden>
+    <p class="consent-text"><span class="consent-emoji" aria-hidden="true">&#127850;</span> We use cookies and local storage to remember your preferences and keep Market Hub working. Nothing is shared or sold. <a href="#faq">Learn more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn" id="consentDecline" type="button">Decline</button>
+      <button class="btn primary" id="consentAccept" type="button">Accept</button>
+    </div>
+  </div>
+
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
