@@ -852,6 +852,20 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', function () { setHeaderH(); spyScroll(); });
     if (toTop) toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+    // Clicking the logo scrolls back to the top (it's a <div> on the homepage, not a link).
+    var brand = document.querySelector('.brand');
+    if (brand && brand.tagName !== 'A') {
+      brand.style.cursor = 'pointer';
+      brand.setAttribute('role', 'button');
+      brand.setAttribute('tabindex', '0');
+      brand.setAttribute('aria-label', 'Back to top');
+      var toTopBrand = function () { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+      brand.addEventListener('click', toTopBrand);
+      brand.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toTopBrand(); }
+      });
+    }
     onScroll();
 
     render();
