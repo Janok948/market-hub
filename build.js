@@ -22,6 +22,7 @@ var SITE_NAME = 'Market Hub';
 var INDEX_TITLE = 'Market Hub — Best Crypto & Stock Market Tools';
 var INDEX_DESC = 'A curated directory of the best tools for crypto and stock-market research — charting, market data, on-chain analytics, screeners, news and more, each with a description.';
 var OG_IMAGE = SITE_URL + '/assets/og-cover.svg';
+var CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'privacy@example.com';  // set CONTACT_EMAIL to your real address
 
 global.window = {};
 require(path.join(ROOT, 'data.js'));
@@ -145,7 +146,7 @@ var LAYERS_ICON = '<svg class="mi" viewBox="0 0 24 24" width="13" height="13" fi
 var CHECK_ICON = '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 6.5"/></svg>';
 
 // Cookie-consent banner injected on every generated page (same look/key as the homepage).
-var CONSENT_HTML = '<p class="consent-text"><span class="consent-emoji" aria-hidden="true">🍪</span> We use cookies and local storage to remember your preferences and keep Market Hub working. Nothing is shared or sold. <a href="/index.html#faq">Learn more</a>.</p><div class="consent-actions"><button class="btn" type="button" data-c="declined">Decline</button><button class="btn primary" type="button" data-c="accepted">Accept</button></div>';
+var CONSENT_HTML = '<p class="consent-text"><span class="consent-emoji" aria-hidden="true">🍪</span> We use cookies and local storage to remember your preferences and keep Market Hub working. Nothing is shared or sold. <a href="/privacy.html">Privacy policy</a>.</p><div class="consent-actions"><button class="btn" type="button" data-c="declined">Decline</button><button class="btn primary" type="button" data-c="accepted">Accept</button></div>';
 
 // Consistent top bar for every generated sub-page. active: 'tools' | 'learn'.
 function siteHead(active, prefix) {
@@ -306,7 +307,7 @@ siteHead('tools', '../') + '\n' +
 '  </main>\n\n' +
 '  <footer class="legal">\n' +
 '    <p class="disclosure">' + (t.isAff ? 'This page links to ' + esc(t.name) + ' via an affiliate link; we may earn a commission at no extra cost to you. ' : '') + 'Nothing here is financial advice &mdash; always do your own research.</p>\n' +
-'    <p><a href="../index.html">&larr; Back to Market Hub</a></p>\n' +
+'    <p><a href="../index.html">&larr; Back to Market Hub</a> &middot; <a href="../privacy.html">Privacy</a></p>\n' +
 '  </footer>\n' +
 footScript(false) +
 '</body>\n</html>\n';
@@ -493,7 +494,7 @@ function coursePage(c, idx) {
     '  </section>\n' +
     '  <footer class="legal">\n' +
     '    <p class="disclosure">This course may link to tools via affiliate links marked &ldquo;Partner&rdquo;; we may earn a commission at no extra cost to you. Educational content only &mdash; nothing here is financial advice.</p>\n' +
-    '    <p><a href="./index.html">&larr; All courses</a> &middot; <a href="../index.html">Market Hub tools</a></p>\n' +
+    '    <p><a href="./index.html">&larr; All courses</a> &middot; <a href="../index.html">Market Hub tools</a> &middot; <a href="../privacy.html">Privacy</a></p>\n' +
     '  </footer>\n' +
     footScript(true) +
     '</body>\n</html>\n';
@@ -543,7 +544,7 @@ function learnIndex() {
     '  </main>\n' +
     '  <footer class="legal">\n' +
     '    <p class="disclosure">Educational content only &mdash; nothing here is financial advice. Some tool links are affiliate links marked &ldquo;Partner&rdquo;.</p>\n' +
-    '    <p><a href="../index.html">&larr; Back to Market Hub</a></p>\n' +
+    '    <p><a href="../index.html">&larr; Back to Market Hub</a> &middot; <a href="../privacy.html">Privacy</a></p>\n' +
     '  </footer>\n' +
     footScript(false) +
     '</body>\n</html>\n';
@@ -554,6 +555,83 @@ function coursesTeaser() {
   return '    <div class="lt-head"><h2>Free courses</h2><a class="lt-all" href="learn/index.html">View all &rarr;</a></div>\n' +
     '    <p class="lt-sub">Learn the skills behind the tools &mdash; buying crypto, reading charts, on-chain analysis, and stock investing.</p>\n' +
     '    <div class="learn-grid">\n' + cards + '\n    </div>';
+}
+
+/* ----------------------------------------------------------- privacy */
+function privacyPage() {
+  var canonical = SITE_URL + '/privacy.html';
+  var updated = new Date().toISOString().slice(0, 10);
+  var ld = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Privacy Policy', url: canonical,
+    description: 'How Market Hub handles your data and privacy.' };
+  var body =
+    '  <main class="tool-wrap course">\n' +
+    '    <nav class="crumbs"><a href="index.html">Home</a> &rsaquo; Privacy</nav>\n' +
+    '    <h1>Privacy Policy</h1>\n' +
+    '    <p class="tool-sub">Last updated: ' + updated + '</p>\n' +
+    '    <p>Market Hub is a static, privacy-first directory of crypto and stock-market tools. It runs in your browser, needs no account, and collects as little as possible. This page explains what is &mdash; and is not &mdash; collected.</p>\n' +
+    '    <h2>The short version</h2>\n' +
+    '    <ul class="points">' +
+      '<li>No account, no login, and no advertising or cross-site tracking cookies.</li>' +
+      '<li>Your settings (saved/hidden tools, theme, course progress, cookie choice) stay in <b>your browser</b> via local storage &mdash; we never see them.</li>' +
+      '<li>We only receive your email address if you choose to subscribe to the newsletter.</li>' +
+      '<li>Nothing is sold; nothing is shared except as needed to serve the site.</li>' +
+    '</ul>\n' +
+    '    <h2>Information we collect</h2>\n' +
+    '    <p><b>Stored only in your browser:</b> your custom links, hidden tools, starred &ldquo;My Links&rdquo;, light/dark theme, view mode, course progress, and your cookie-consent choice. This data lives on your device, is not transmitted to us, and you can clear it any time from your browser settings.</p>\n' +
+    '    <p><b>Newsletter (optional):</b> if you submit the signup form, the email address you provide is sent to our email provider so we can send you updates. You can unsubscribe at any time.</p>\n' +
+    '    <p><b>Server logs:</b> our host may automatically log standard request data (such as IP address and browser type) for security and reliability, as is typical for any website.</p>\n' +
+    '    <h2>Cookies &amp; local storage</h2>\n' +
+    '    <p>Market Hub does not use advertising or cross-site tracking cookies. We use your browser&rsquo;s <b>local storage</b> for the preferences above, and we store your cookie-consent choice so the notice appears only once. Declining the notice does not break the site.</p>\n' +
+    '    <h2>Third-party services</h2>\n' +
+    '    <ul class="points">' +
+      '<li><b>Favicons:</b> tool icons load from Google&rsquo;s public favicon service, so your browser requests an icon for each listed domain.</li>' +
+      '<li><b>Outbound &amp; affiliate links:</b> clicking a tool takes you to a third-party site governed by its own privacy policy. Some links are affiliate links (marked &ldquo;Partner&rdquo;); the destination may set its own cookies to attribute a referral.</li>' +
+      '<li><b>Hosting:</b> the site is served by our hosting provider, which processes requests to deliver the pages.</li>' +
+    '</ul>\n' +
+    '    <h2>Analytics</h2>\n' +
+    '    <p>We do not currently run third-party analytics or tracking scripts. If we add privacy-friendly analytics in future, we will update this page first.</p>\n' +
+    '    <h2>Your choices</h2>\n' +
+    '    <ul class="points">' +
+      '<li>Clear your stored preferences any time via your browser&rsquo;s site-data settings.</li>' +
+      '<li>Decline the cookie notice, or use private / incognito browsing.</li>' +
+      '<li>Unsubscribe from the newsletter using the link in any email.</li>' +
+    '</ul>\n' +
+    '    <h2>Data retention &amp; security</h2>\n' +
+    '    <p>Browser-stored preferences remain until you clear them. Newsletter emails are kept until you unsubscribe. We take reasonable measures to protect any data we hold, though no method of transmission or storage is ever completely secure.</p>\n' +
+    '    <h2>Children</h2>\n' +
+    '    <p>Market Hub is not directed to children under 13 (or the equivalent age in your country) and we do not knowingly collect their data.</p>\n' +
+    '    <h2>Changes to this policy</h2>\n' +
+    '    <p>We may update this policy from time to time. Material changes will be reflected by the &ldquo;Last updated&rdquo; date above.</p>\n' +
+    '    <h2>Contact</h2>\n' +
+    '    <p>Questions about privacy? Email <a href="mailto:' + esc(CONTACT_EMAIL) + '">' + esc(CONTACT_EMAIL) + '</a>.</p>\n' +
+    '    <p class="disclosure" style="margin-top:24px">This policy is provided for general information and is not legal advice.</p>\n' +
+    '  </main>\n';
+  return '<!DOCTYPE html>\n<html lang="en" data-theme="dark">\n<head>\n' +
+    '  <meta charset="UTF-8" />\n' +
+    '  <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n' +
+    '  <title>Privacy Policy | Market Hub</title>\n' +
+    '  <meta name="description" content="How Market Hub handles your data: no tracking cookies, browser-only preferences, and an optional newsletter." />\n' +
+    '  <link rel="canonical" href="' + esc(canonical) + '" />\n' +
+    '  <meta name="robots" content="index, follow" />\n' +
+    '  <meta name="theme-color" content="#0b0c0f" />\n' +
+    '  <meta property="og:type" content="website" />\n' +
+    '  <meta property="og:site_name" content="Market Hub" />\n' +
+    '  <meta property="og:title" content="Privacy Policy &mdash; Market Hub" />\n' +
+    '  <meta property="og:description" content="How Market Hub handles your data and privacy." />\n' +
+    '  <meta property="og:url" content="' + esc(canonical) + '" />\n' +
+    '  <meta property="og:image" content="' + esc(OG_IMAGE) + '" />\n' +
+    '  <link rel="icon" href="' + FAVICON + '" />\n' +
+    '  <link rel="stylesheet" href="styles.css" />\n' +
+    '  ' + THEME_SCRIPT + '\n' +
+    '  <script type="application/ld+json">' + jsonld(ld) + '</script>\n' +
+    '</head>\n<body>\n' +
+    siteHead('', '') + '\n' +
+    body +
+    '  <footer class="legal">\n' +
+    '    <p><a href="index.html">&larr; Back to Market Hub</a></p>\n' +
+    '  </footer>\n' +
+    footScript(false) +
+    '</body>\n</html>\n';
 }
 
 /* --------------------------------------------------------------- FAQ */
@@ -644,11 +722,13 @@ tools.forEach(function (t) { fs.writeFileSync(path.join(toolsDir, t.slug + '.htm
 var learnDir = path.join(ROOT, 'learn');
 if (!fs.existsSync(learnDir)) fs.mkdirSync(learnDir, { recursive: true });
 fs.writeFileSync(path.join(learnDir, 'index.html'), learnIndex());
+fs.writeFileSync(path.join(ROOT, 'privacy.html'), privacyPage());
 COURSES.forEach(function (c, i) { fs.writeFileSync(path.join(learnDir, c.slug + '.html'), coursePage(c, i)); });
 
 var urls = [
   '  <url><loc>' + SITE_URL + '/</loc><priority>1.0</priority></url>',
-  '  <url><loc>' + SITE_URL + '/learn/</loc><priority>0.8</priority></url>'
+  '  <url><loc>' + SITE_URL + '/learn/</loc><priority>0.8</priority></url>',
+  '  <url><loc>' + SITE_URL + '/privacy.html</loc><priority>0.3</priority></url>'
 ];
 COURSES.forEach(function (c) { urls.push('  <url><loc>' + SITE_URL + '/learn/' + c.slug + '.html</loc><priority>0.8</priority></url>'); });
 tools.forEach(function (t) { urls.push('  <url><loc>' + SITE_URL + '/tools/' + t.slug + '.html</loc><priority>0.7</priority></url>'); });
