@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="1" y="1" width="718" height="378" rx="16" fill="#14161c" stroke="#23262e"/>
+  <text x="28" y="40" fill="#e8eaef" font-size="18" font-weight="600">Trend, support &amp; resistance</text>
+  <text x="28" y="64" fill="#6b7280" font-size="12.5">An uptrend makes higher highs and higher lows, between rising support and resistance.</text>
+
+  <!-- axes -->
+  <g stroke="#23262e" stroke-width="1">
+    <line x1="70" y1="90" x2="70" y2="342"/>
+    <line x1="70" y1="342" x2="662" y2="342"/>
+  </g>
+
+  <!-- channel -->
+  <line x1="70" y1="230" x2="650" y2="100" stroke="#ea3943" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.8"/>
+  <line x1="70" y1="310" x2="650" y2="180" stroke="#16c784" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.8"/>
+
+  <!-- price -->
+  <polyline points="70,305 160,212 250,273 340,172 430,232 520,132 610,192 650,104" fill="none" stroke="#cdd2da" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- touch points -->
+  <g fill="#ea3943"><circle cx="160" cy="212" r="3.5"/><circle cx="340" cy="172" r="3.5"/><circle cx="520" cy="132" r="3.5"/></g>
+  <g fill="#16c784"><circle cx="70" cy="305" r="3.5"/><circle cx="250" cy="273" r="3.5"/><circle cx="430" cy="232" r="3.5"/><circle cx="610" cy="192" r="3.5"/></g>
+
+  <text x="455" y="124" fill="#ea3943" font-size="13" font-weight="600">Resistance</text>
+  <text x="95" y="332" fill="#16c784" font-size="13" font-weight="600">Support</text>
+  <text x="92" y="92" fill="#10b981" font-size="13" font-weight="600">Uptrend &#8599;</text>
+</svg>

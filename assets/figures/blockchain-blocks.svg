@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="arA" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#10b981"/></marker>
+  </defs>
+  <rect x="1" y="1" width="718" height="318" rx="16" fill="#14161c" stroke="#23262e"/>
+  <text x="28" y="40" fill="#e8eaef" font-size="18" font-weight="600">A blockchain is a chain of blocks</text>
+  <text x="28" y="64" fill="#6b7280" font-size="12.5">Each block references the previous one, so the history can't be quietly rewritten.</text>
+
+  <g>
+    <rect x="55"  y="100" width="180" height="170" rx="12" fill="#1b1e26" stroke="#2a2f3a"/>
+    <rect x="270" y="100" width="180" height="170" rx="12" fill="#1b1e26" stroke="#2a2f3a"/>
+    <rect x="485" y="100" width="180" height="170" rx="12" fill="#1b1e26" stroke="#2a2f3a"/>
+  </g>
+
+  <line x1="235" y1="185" x2="266" y2="185" stroke="#10b981" stroke-width="2" marker-end="url(#arA)"/>
+  <line x1="450" y1="185" x2="481" y2="185" stroke="#10b981" stroke-width="2" marker-end="url(#arA)"/>
+
+  <!-- block A -->
+  <text x="71" y="132" fill="#e8eaef" font-size="14" font-weight="600">Block 84</text>
+  <line x1="71" y1="144" x2="219" y2="144" stroke="#2a2f3a"/>
+  <text x="71" y="168" fill="#6b7280" font-size="10.5">Hash</text>
+  <text x="71" y="185" fill="#10b981" font-size="12" font-family="ui-monospace,Menlo,Consolas,monospace">0x9f3a…7d</text>
+  <text x="71" y="212" fill="#6b7280" font-size="10.5">Prev hash</text>
+  <text x="71" y="229" fill="#9aa1ad" font-size="12" font-family="ui-monospace,Menlo,Consolas,monospace">0x0000…00</text>
+  <text x="71" y="256" fill="#6b7280" font-size="10.5">3,210 transactions</text>
+
+  <!-- block B -->
+  <text x="286" y="132" fill="#e8eaef" font-size="14" font-weight="600">Block 85</text>
+  <line x1="286" y1="144" x2="434" y2="144" stroke="#2a2f3a"/>
+  <text x="286" y="168" fill="#6b7280" font-size="10.5">Hash</text>
+  <text x="286" y="185" fill="#10b981" font-size="12" font-family="ui-monospace,Menlo,Consolas,monospace">0x4c81…b2</text>
+  <text x="286" y="212" fill="#6b7280" font-size="10.5">Prev hash</text>
+  <text x="286" y="229" fill="#9aa1ad" font-size="12" font-family="ui-monospace,Menlo,Consolas,monospace">0x9f3a…7d</text>
+  <text x="286" y="256" fill="#6b7280" font-size="10.5">2,884 transactions</text>
+
+  <!-- block C -->
+  <text x="501" y="132" fill="#e8eaef" font-size="14" font-weight="600">Block 86</text>
+  <line x1="501" y1="144" x2="649" y2="144" stroke="#2a2f3a"/>
+  <text x="501" y="168" fill="#6b7280" font-size="10.5">Hash</text>
+  <text x="501" y="185" fill="#10b981" font-size="12" font-family="ui-monospace,Menlo,Consolas,monospace">0x7c1b…02</text>
+  <text x="501" y="212" fill="#6b7280" font-size="10.5">Prev hash</text>
+  <text x="501" y="229" fill="#9aa1ad" font-size="12" font-family="ui-monospace,Menlo,Consolas,monospace">0x4c81…b2</text>
+  <text x="501" y="256" fill="#6b7280" font-size="10.5">3,051 transactions</text>
+</svg>

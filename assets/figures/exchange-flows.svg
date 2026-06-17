@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="arR" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#ea3943"/></marker>
+    <marker id="arG" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#16c784"/></marker>
+  </defs>
+  <rect x="1" y="1" width="718" height="338" rx="16" fill="#14161c" stroke="#23262e"/>
+  <text x="28" y="40" fill="#e8eaef" font-size="18" font-weight="600">Exchange flows: a behaviour signal</text>
+  <text x="28" y="64" fill="#6b7280" font-size="12.5">Where coins move can hint at what holders intend to do next.</text>
+
+  <rect x="40"  y="150" width="170" height="92" rx="12" fill="#1b1e26" stroke="#2a2f3a"/>
+  <rect x="295" y="150" width="130" height="92" rx="12" fill="#1b1e26" stroke="#2a2f3a"/>
+  <rect x="510" y="150" width="170" height="92" rx="12" fill="#1b1e26" stroke="#2a2f3a"/>
+
+  <text x="125" y="201" fill="#9aa1ad" font-size="13" text-anchor="middle">Personal wallets</text>
+  <text x="360" y="201" fill="#e8eaef" font-size="14" font-weight="600" text-anchor="middle">Exchange</text>
+  <text x="595" y="201" fill="#9aa1ad" font-size="13" text-anchor="middle">Self-custody</text>
+
+  <line x1="212" y1="196" x2="291" y2="196" stroke="#ea3943" stroke-width="2.5" marker-end="url(#arR)"/>
+  <text x="251" y="132" fill="#ea3943" font-size="12.5" font-weight="600" text-anchor="middle">Inflow</text>
+  <text x="251" y="270" fill="#6b7280" font-size="11" text-anchor="middle">sell pressure</text>
+
+  <line x1="427" y1="196" x2="506" y2="196" stroke="#16c784" stroke-width="2.5" marker-end="url(#arG)"/>
+  <text x="467" y="132" fill="#16c784" font-size="12.5" font-weight="600" text-anchor="middle">Outflow</text>
+  <text x="467" y="270" fill="#6b7280" font-size="11" text-anchor="middle">accumulation</text>
+</svg>
