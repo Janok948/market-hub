@@ -20,7 +20,7 @@
   //   2. Own your list — use the bundled Supabase function (see api/subscribe.js):
   //        var NEWSLETTER_ENDPOINT = '/api/subscribe';
   // Leave '' for demo mode — the form validates and thanks the user but stores nothing.
-  var NEWSLETTER_ENDPOINT = '';
+  var NEWSLETTER_ENDPOINT = 'https://formspree.io/f/mpqegrjw';
 
   var SECTION_ORDER = ['stocks', 'crypto', 'macro'];
   var SECTION_LABEL = { stocks: 'Stocks', crypto: 'Crypto', macro: 'Macro & Economy' };
