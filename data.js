@@ -161,7 +161,22 @@ window.SEED_LINKS = [
     url: 'https://www.sec.gov/edgar/search/',
     description: 'The official source for U.S. company filings — 10-Ks, 10-Qs, 8-Ks, and insider forms, fully text-searchable.',
     sections: ['stocks'],
-    group: 'Filings & Ownership'
+    group: 'Filings & Ownership',
+    overview: [
+      "SEC EDGAR is the official US Securities and Exchange Commission database of company filings, and the primary source for serious research on US-listed companies. Everything public companies are legally required to disclose is filed here, for free.",
+      "You can read annual reports (10-K), quarterly reports (10-Q), material-event disclosures (8-K), insider transactions (Forms 3, 4 and 5) and institutional holdings (13F), all fully text-searchable. When accuracy matters, going to the primary source on EDGAR beats relying on second-hand summaries."
+    ],
+    bestFor: [
+      "Reading primary-source filings for US-listed companies",
+      "Reviewing 10-K and 10-Q financial reports",
+      "Tracking insider transactions and institutional holdings",
+      "Verifying claims against official disclosures"
+    ],
+    faqs: [
+      { q: "Is SEC EDGAR free?", a: "Yes — EDGAR is a free public service of the US SEC, with no account required." },
+      { q: "What's the difference between a 10-K and a 10-Q?", a: "A 10-K is the comprehensive, audited annual report; a 10-Q is a lighter quarterly update. Both cover financials, risks and business operations." },
+      { q: "Does EDGAR cover non-US companies?", a: "It covers companies that file with the US SEC, which includes many foreign firms listed in the US (often via Form 20-F), but not purely domestic non-US listings." }
+    ]
   },
   {
     name: 'WhaleWisdom',
@@ -305,7 +320,22 @@ window.SEED_LINKS = [
     url: 'https://coinmarketcap.com',
     description: 'The most-visited price and market-cap aggregator, with rankings, watchlists, and event data.',
     sections: ['crypto'],
-    group: 'Market Data & Aggregators'
+    group: 'Market Data & Aggregators',
+    overview: [
+      "CoinMarketCap is the most-visited cryptocurrency price aggregator, tracking prices, market caps and trading volumes for thousands of assets. For many people it's the very first site they use to check a coin's price.",
+      "It offers rankings, watchlists, historical data, exchange listings and an events calendar, plus beginner-friendly educational content. CoinMarketCap is owned by Binance, so some users cross-reference it with independent aggregators such as CoinGecko for listings and data."
+    ],
+    bestFor: [
+      "Checking prices and market-cap rankings quickly",
+      "Building watchlists and tracking favourites",
+      "Researching which exchanges list an asset",
+      "Following a calendar of crypto events"
+    ],
+    faqs: [
+      { q: "Is CoinMarketCap free?", a: "Yes — the site and core data are free, with a developer API offering free and paid tiers." },
+      { q: "Who owns CoinMarketCap?", a: "It's owned by Binance. It still operates as a broad, multi-exchange aggregator, but some users cross-check listings against independent sources." },
+      { q: "CoinMarketCap vs CoinGecko?", a: "Both are top aggregators with similar data. CoinMarketCap is owned by Binance and gets the most traffic; CoinGecko is independent. Many people consult both." }
+    ]
   },
   {
     name: 'Messari',
@@ -337,7 +367,22 @@ window.SEED_LINKS = [
     url: 'https://glassnode.com',
     description: 'Institutional on-chain metrics that translate raw blockchain activity into market-relevant signals.',
     sections: ['crypto'],
-    group: 'On-Chain Analytics'
+    group: 'On-Chain Analytics',
+    overview: [
+      "Glassnode is a leading on-chain analytics platform that turns raw blockchain activity into market-relevant metrics and charts. Analysts and institutions use it to understand what holders are actually doing — beyond what price alone reveals.",
+      "It surfaces indicators like exchange in/outflows, supply held by long-term holders, profitability metrics (MVRV, SOPR, NUPL) and network activity, with a free tier and paid plans for deeper, higher-resolution data. It works best as a third lens alongside price charts and derivatives data."
+    ],
+    bestFor: [
+      "Reading on-chain supply, flows and holder behaviour",
+      "Tracking profitability metrics like MVRV and SOPR",
+      "Confirming market trends with blockchain data",
+      "Adding an on-chain lens to technical analysis"
+    ],
+    faqs: [
+      { q: "Is Glassnode free?", a: "Glassnode has a free tier with a selection of metrics; advanced and higher-resolution indicators require a paid subscription." },
+      { q: "Do I need to be an expert to use Glassnode?", a: "Basic charts are approachable, but many metrics assume some on-chain literacy. The Market Hub On-Chain Analysis course is a good primer on what the key indicators mean." },
+      { q: "Which blockchains does Glassnode cover?", a: "It focuses on major assets such as Bitcoin and Ethereum, with the deepest metric coverage for Bitcoin." }
+    ]
   },
   {
     name: 'Dune',
@@ -374,7 +419,22 @@ window.SEED_LINKS = [
     url: 'https://defillama.com',
     description: 'The neutral standard for DeFi TVL — protocol, chain, stablecoin, and yield data with no token bias.',
     sections: ['crypto'],
-    group: 'DeFi & TVL'
+    group: 'DeFi & TVL',
+    overview: [
+      "DefiLlama is the most widely trusted, neutral source for DeFi analytics, best known for tracking Total Value Locked (TVL) across protocols and blockchains. It's run independently and avoids token bias, which is exactly why its figures are so widely cited.",
+      "Beyond TVL it covers stablecoin supply, DEX volumes, protocol fees and revenue, yields, bridges and chain-by-chain breakdowns — a one-stop dashboard for understanding where money actually sits and moves in DeFi. It's free and needs no account."
+    ],
+    bestFor: [
+      "Comparing DeFi protocols and chains by TVL",
+      "Tracking stablecoin supply and DEX volumes",
+      "Researching protocol fees, revenue and yields",
+      "Getting neutral, token-agnostic DeFi data"
+    ],
+    faqs: [
+      { q: "What is TVL?", a: "Total Value Locked is the dollar value of assets deposited in a protocol — a rough gauge of usage and trust. It can be inflated by token prices or double-counting, so read it alongside fees and revenue." },
+      { q: "Is DefiLlama free?", a: "Yes, entirely free with no account required, and it offers a free public API that many other apps rely on." },
+      { q: "Why is DefiLlama considered neutral?", a: "It's independently run and doesn't promote its own token or sell listings, so its rankings aren't pay-to-play — the main reason it's the industry reference for TVL." }
+    ]
   },
   {
     name: 'DeBank',
@@ -404,7 +464,22 @@ window.SEED_LINKS = [
     url: 'https://etherscan.io',
     description: 'The definitive Ethereum explorer for transactions, smart contracts, tokens, and gas tracking.',
     sections: ['crypto'],
-    group: 'Block Explorers'
+    group: 'Block Explorers',
+    overview: [
+      "Etherscan is the definitive block explorer for Ethereum, letting anyone inspect transactions, addresses, smart contracts and tokens on the network. If something happens on Ethereum, Etherscan is where you verify it.",
+      "Paste in a transaction hash to confirm it succeeded, look up any wallet's balance and full history, read or interact with verified contract code, follow token transfers, and watch gas prices in real time. It's essential for everything from confirming a withdrawal landed to researching who holds a token."
+    ],
+    bestFor: [
+      "Confirming whether an Ethereum transaction went through",
+      "Looking up any wallet address and its full history",
+      "Inspecting and verifying smart-contract code",
+      "Checking a token's holder list and live gas prices"
+    ],
+    faqs: [
+      { q: "Is Etherscan free?", a: "Yes. Browsing transactions, addresses, contracts and tokens is free, and there's a developer API with free and paid tiers." },
+      { q: "Does Etherscan work for other blockchains?", a: "Etherscan covers Ethereum. Sister explorers run the same way for other chains — for example BscScan, Polygonscan and Arbiscan." },
+      { q: "Can I see who owns a wallet on Etherscan?", a: "No — addresses are pseudonymous. You can see balances, activity and sometimes public labels, but not a real-world identity." }
+    ]
   },
   {
     name: 'Solscan',
@@ -511,7 +586,22 @@ window.SEED_LINKS = [
     description: 'Long-standing exchange respected for security, fiat support, and solid liquidity.',
     sections: ['crypto'],
     group: 'Exchanges',
-    affiliate: 'https://www.kraken.com/sign-up?ref=YOUR_ID'  // paste your exact Kraken affiliate link
+    affiliate: 'https://www.kraken.com/sign-up?ref=YOUR_ID',  // paste your exact Kraken affiliate link
+    overview: [
+      "Kraken is one of the longest-running cryptocurrency exchanges, founded in 2011, and has built its reputation on security, reliability and strong fiat support. It's a common pick for users who value a solid track record and regulatory engagement over having the absolute widest coin selection.",
+      "The standard interface keeps buying and selling simple, while Kraken Pro adds full charting, advanced order types and lower fees on the same account. Kraken supports spot and (where permitted) margin and futures trading, staking, and a wide range of fiat funding options across many countries."
+    ],
+    bestFor: [
+      "Security-conscious users who value a long track record",
+      "Reliable fiat deposits and withdrawals in many currencies",
+      "Lower fees and advanced orders via Kraken Pro",
+      "Staking supported assets directly from your account"
+    ],
+    faqs: [
+      { q: "Is Kraken safe?", a: "Kraken is one of the oldest exchanges with a strong security history and no major breach of customer funds. As always, enable two-factor authentication and consider self-custody for long-term holdings." },
+      { q: "What's the difference between Kraken and Kraken Pro?", a: "The simple Kraken interface is built for quick buys and sells; Kraken Pro — same account — adds full charts, advanced order types and lower trading fees." },
+      { q: "Does Kraken support my country?", a: "Kraken serves a large number of countries with broad fiat support, though some products like futures or staking are restricted in certain regions. Check availability when you sign up." }
+    ]
   },
   {
     name: 'Bybit',
@@ -519,7 +609,22 @@ window.SEED_LINKS = [
     description: 'Popular derivatives-first exchange with deep perpetual-futures markets.',
     sections: ['crypto'],
     group: 'Exchanges',
-    affiliate: 'https://www.bybit.com/invite?ref=YOUR_ID'  // paste your exact Bybit referral link
+    affiliate: 'https://www.bybit.com/invite?ref=YOUR_ID',  // paste your exact Bybit referral link
+    overview: [
+      "Bybit is a derivatives-first cryptocurrency exchange popular with active traders for its deep perpetual-futures markets, fast matching engine and trader-focused interface. It has since broadened into spot trading, earn products and a wider ecosystem.",
+      "Its core appeal is leverage and liquidity for futures. As with any derivatives platform, leverage sharply magnifies both gains and the risk of liquidation, so Bybit suits traders who already understand those risks rather than complete beginners."
+    ],
+    bestFor: [
+      "Trading crypto perpetual and futures contracts",
+      "Deep derivatives liquidity and fast execution",
+      "Active traders who want advanced order types",
+      "Spot trading and earn products alongside derivatives"
+    ],
+    faqs: [
+      { q: "Is Bybit good for beginners?", a: "Bybit is primarily a derivatives exchange, and leveraged trading is risky for newcomers. Beginners are usually better off starting with simple spot purchases before considering futures." },
+      { q: "What is a perpetual contract?", a: "A perpetual is a futures contract with no expiry date, letting you hold a leveraged long or short position indefinitely while paying or receiving periodic funding. Liquidation risk rises with leverage." },
+      { q: "Does Bybit offer spot trading?", a: "Yes. Although best known for derivatives, Bybit also supports spot markets, staking and earn products." }
+    ]
   },
   {
     name: 'OKX',
@@ -527,7 +632,22 @@ window.SEED_LINKS = [
     description: 'Major global exchange combining spot, derivatives, and a built-in Web3 wallet.',
     sections: ['crypto'],
     group: 'Exchanges',
-    affiliate: 'https://www.okx.com/join/YOUR_ID'  // paste your exact OKX referral link
+    affiliate: 'https://www.okx.com/join/YOUR_ID',  // paste your exact OKX referral link
+    overview: [
+      "OKX is a major global cryptocurrency exchange offering a broad mix of spot, margin and derivatives markets alongside a built-in Web3 wallet and DeFi access. It's known for deep liquidity and a product range that spans both centralised trading and on-chain activity.",
+      "The OKX app combines a custodial exchange with a self-custody Web3 wallet, so you can move between simple buying, advanced trading and DeFi from one place. As with all major exchanges, feature availability varies by region due to local regulation."
+    ],
+    bestFor: [
+      "Spot, margin and derivatives in one platform",
+      "Accessing DeFi via the built-in Web3 wallet",
+      "Deep liquidity across a wide range of markets",
+      "Traders who want both centralised and on-chain tools"
+    ],
+    faqs: [
+      { q: "What makes OKX different?", a: "OKX pairs a full centralised exchange with an integrated self-custody Web3 wallet, so you can trade and access DeFi from the same app." },
+      { q: "Is OKX available everywhere?", a: "OKX operates in many countries, but availability and specific features depend on local regulations — check what's offered when you register." },
+      { q: "Does OKX support derivatives?", a: "Yes — OKX offers extensive derivatives including perpetual swaps and futures, in addition to spot and margin trading." }
+    ]
   },
 
   // Portfolio & Wallets
