@@ -24,7 +24,22 @@ window.SEED_LINKS = [
     description: 'The industry-standard charting platform — hundreds of indicators, multi-asset coverage, alerts, and a huge community sharing trade ideas.',
     sections: ['stocks', 'crypto'],
     group: 'Charting & Technical Analysis',
-    affiliate: 'https://www.tradingview.com/?aff_id=YOUR_ID'  // replace YOUR_ID with your TradingView affiliate id
+    affiliate: 'https://www.tradingview.com/?aff_id=YOUR_ID',  // replace YOUR_ID with your TradingView affiliate id
+    overview: [
+      "TradingView is the most widely used charting platform on the web, pairing professional-grade price charts with a huge social network of traders. It runs entirely in the browser, covers stocks, crypto, forex, futures and indices, and has become such a standard that many brokers and exchanges embed its charts directly into their own platforms.",
+      "Its real strength is breadth without clutter: hundreds of built-in indicators, a custom scripting language (Pine Script) for building your own studies and strategies, multi-chart layouts, and flexible alerts that can fire on price, an indicator or a trendline. The free tier covers most of what a beginner needs, while paid plans add more indicators and alerts per chart, extra layouts and faster data."
+    ],
+    bestFor: [
+      "Charting every asset class from one clean interface",
+      "Setting price and indicator alerts delivered by app, email or SMS",
+      "Building and back-testing custom indicators with Pine Script",
+      "Following and publishing trade ideas within a large community"
+    ],
+    faqs: [
+      { q: "Is TradingView free?", a: "Yes. The free plan includes full charting, a large indicator library and basic alerts. Paid tiers mainly add more indicators and alerts per chart, extra saved layouts and faster, second-based data." },
+      { q: "Can I place trades from TradingView?", a: "You can connect supported brokers and exchanges to trade directly from the chart, but TradingView itself is a charting and analysis platform rather than a broker." },
+      { q: "Does TradingView cover both crypto and stocks?", a: "Yes — it spans stocks, crypto, forex, futures, bonds and indices, with data drawn from hundreds of global exchanges." }
+    ]
   },
   {
     name: 'StockCharts',
@@ -40,7 +55,22 @@ window.SEED_LINKS = [
     url: 'https://finance.yahoo.com',
     description: 'The most popular free finance hub: quotes, financial statements, analyst targets, news, and watchlists for virtually any ticker.',
     sections: ['stocks'],
-    group: 'Market Data & Quotes'
+    group: 'Market Data & Quotes',
+    overview: [
+      "Yahoo Finance is the most popular free financial hub on the web, giving fast access to quotes, charts, news and fundamental data for virtually any stock, ETF, index, currency or major cryptocurrency. For millions of retail investors it's the default first place to check a ticker.",
+      "It's a capable daily driver: build watchlists, scan analyst price targets and upcoming earnings dates, read aggregated news, review financial statements and key ratios, and download historical prices as CSV. A premium tier adds deeper research and screening, but the free version covers most everyday needs."
+    ],
+    bestFor: [
+      "Quick quotes, charts and news for almost any ticker",
+      "Reviewing financial statements, ratios and analyst targets",
+      "Building and tracking free watchlists",
+      "Downloading historical price data for analysis"
+    ],
+    faqs: [
+      { q: "Is Yahoo Finance free?", a: "Yes. Core quotes, news, financials and watchlists are free; Yahoo Finance Plus is an optional paid upgrade for deeper research and screening." },
+      { q: "How accurate is Yahoo Finance data?", a: "It's reliable for everyday use and widely cited, though quotes can be slightly delayed and occasional data errors occur — verify critical figures against primary filings." },
+      { q: "Can I export data from Yahoo Finance?", a: "Yes — historical price data can be downloaded as a CSV file from each asset's historical-data tab." }
+    ]
   },
   {
     name: 'Google Finance',
@@ -63,7 +93,22 @@ window.SEED_LINKS = [
     url: 'https://finviz.com',
     description: 'Lightning-fast stock screener with a famous market heatmap and visual filters — a daily go-to for many traders.',
     sections: ['stocks'],
-    group: 'Screeners'
+    group: 'Screeners',
+    overview: [
+      "Finviz is a fast, visual stock screener and market-overview tool best known for its colour-coded market heatmap, which shows the entire US market's performance at a single glance. It's a daily go-to for equity traders who want to read the market's mood quickly.",
+      "The free screener filters thousands of stocks by descriptive, fundamental and technical criteria, with charts, news, insider transactions and analyst data on every ticker. Finviz Elite adds real-time data, intraday charts, advanced screener filters and backtesting for more serious users."
+    ],
+    bestFor: [
+      "Screening US stocks by fundamental and technical filters",
+      "Reading sector and market moves via the heatmap",
+      "Scanning charts and news quickly across many tickers",
+      "Spotting setups and outliers fast"
+    ],
+    faqs: [
+      { q: "Is Finviz free?", a: "The core screener, heatmap and charts are free with slightly delayed data. Finviz Elite is a paid upgrade adding real-time quotes, intraday charts, more filters and backtesting." },
+      { q: "Does Finviz cover crypto or international stocks?", a: "Finviz focuses mainly on US-listed equities and ETFs, with some futures and forex. It isn't a crypto or global-equities tool." },
+      { q: "What is the Finviz heatmap?", a: "It's a tiled map of the market where each stock is sized by market capitalisation and coloured by performance, making the day's winners and losers obvious at a glance." }
+    ]
   },
   {
     name: 'Stock Analysis',
@@ -238,7 +283,22 @@ window.SEED_LINKS = [
     url: 'https://www.coingecko.com',
     description: 'Broad, independent crypto data — prices, market caps, exchanges, and metrics across thousands of assets.',
     sections: ['crypto'],
-    group: 'Market Data & Aggregators'
+    group: 'Market Data & Aggregators',
+    overview: [
+      "CoinGecko is one of the most comprehensive and independent sources of cryptocurrency market data, tracking thousands of coins and tokens across hundreds of exchanges. Because it isn't owned by any single exchange, its rankings and listings are widely regarded as neutral.",
+      "For each asset you get price, market cap, trading volume, circulating and total supply, historical charts and links to official resources, alongside broader metrics like market dominance and category breakdowns. It's a fast first stop for sizing up a project — checking how large it really is and how much future supply is still to be released — before you dig deeper."
+    ],
+    bestFor: [
+      "Comparing coins by market cap, volume and supply",
+      "Checking circulating vs total supply and potential dilution",
+      "Researching thousands of tokens from a neutral source",
+      "Tracking overall market trends and Bitcoin dominance"
+    ],
+    faqs: [
+      { q: "Is CoinGecko free?", a: "Yes — the website and core data are free to use. There's also a developer API with both free and paid tiers." },
+      { q: "CoinGecko vs CoinMarketCap — what's the difference?", a: "Both are leading aggregators. CoinGecko is independent, whereas CoinMarketCap is owned by Binance, so many people cross-check both for data and listings." },
+      { q: "Does a CoinGecko listing mean a coin is safe?", a: "No. CoinGecko lists a very wide range of assets, including small and brand-new tokens. A listing is not an endorsement — always do your own research." }
+    ]
   },
   {
     name: 'CoinMarketCap',
@@ -405,7 +465,22 @@ window.SEED_LINKS = [
     description: 'The largest crypto exchange by volume, with deep liquidity and a vast range of markets.',
     sections: ['crypto'],
     group: 'Exchanges',
-    affiliate: 'https://accounts.binance.com/register?ref=YOUR_ID'  // paste your exact Binance referral link
+    affiliate: 'https://accounts.binance.com/register?ref=YOUR_ID',  // paste your exact Binance referral link
+    overview: [
+      "Binance is the largest cryptocurrency exchange in the world by trading volume, offering one of the deepest liquidity pools and the widest selection of tradable assets anywhere. It serves everyone from first-time buyers using its simple 'Buy Crypto' flow to professional traders running leveraged derivatives.",
+      "Beyond spot trading, Binance provides advanced order types, perpetual and quarterly futures, staking and 'earn' products, and a built-in Web3 wallet. Because crypto rules differ by country, the exact features and even the legal entity you use can vary by region — so the product set you see depends on where you register."
+    ],
+    bestFor: [
+      "Accessing deep liquidity and tight spreads on major pairs",
+      "Trading a very wide range of coins and tokens in one place",
+      "Spot, margin and derivatives from a single account",
+      "Earning yield through staking and savings products"
+    ],
+    faqs: [
+      { q: "Is Binance available in my country?", a: "Binance operates globally, but its features and availability differ by jurisdiction, and some regions use a separate local entity. Check exactly what's offered when you register from your country." },
+      { q: "Is Binance good for beginners?", a: "Yes. There's a simple buy flow for newcomers and a full advanced interface for later. Start small, fund by bank transfer rather than card to save on fees, and turn on two-factor authentication." },
+      { q: "What fees does Binance charge?", a: "Trading fees are a small percentage per trade with maker/taker tiers that fall as your volume grows — generally lower than convenience apps. Card purchases cost more than bank transfers." }
+    ]
   },
   {
     name: 'Coinbase',
@@ -413,7 +488,22 @@ window.SEED_LINKS = [
     description: 'The most trusted U.S.-listed on-ramp, known for ease of use and regulatory compliance.',
     sections: ['crypto'],
     group: 'Exchanges',
-    affiliate: 'https://www.coinbase.com/join/YOUR_ID'  // paste your exact Coinbase referral link
+    affiliate: 'https://www.coinbase.com/join/YOUR_ID',  // paste your exact Coinbase referral link
+    overview: [
+      "Coinbase is the most widely trusted on-ramp into crypto for newcomers, particularly in the United States, where it's a publicly listed company subject to regulatory oversight. Its reputation rests on ease of use, a clean mobile app, and a strong compliance track record.",
+      "The standard Coinbase app is built for simplicity — buy, sell and hold a curated list of assets — while Coinbase Advanced offers a full trading interface with noticeably lower fees on the same account. Coinbase also offers a separate self-custody app, Coinbase Wallet, for interacting with DeFi and NFTs where you hold your own keys."
+    ],
+    bestFor: [
+      "Buying your first crypto on a simple, regulated platform",
+      "A polished mobile experience with easy bank or card funding",
+      "Lower fees via Coinbase Advanced once you're comfortable",
+      "Pairing with Coinbase Wallet for self-custody and DeFi"
+    ],
+    faqs: [
+      { q: "Is Coinbase safe?", a: "Coinbase is a US-listed, regulated exchange with strong security practices. As with any custodial platform, enable two-factor authentication and consider moving long-term holdings into self-custody." },
+      { q: "Why are Coinbase's fees higher?", a: "The simple Coinbase app bundles convenience into wider spreads and fees. Switching to Coinbase Advanced — same login, same account — gives substantially lower trading fees." },
+      { q: "What's the difference between Coinbase and Coinbase Wallet?", a: "Coinbase is the custodial exchange that holds your keys for you. Coinbase Wallet is a separate self-custody app where you control your own keys for DeFi, NFTs and other chains." }
+    ]
   },
   {
     name: 'Kraken',

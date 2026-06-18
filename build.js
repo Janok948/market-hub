@@ -112,7 +112,11 @@ var tools = LINKS.map(function (it) {
     name: it.name, url: it.url, description: it.description || '',
     sections: it.sections || ['stocks'], group: it.group || 'Other',
     slug: slug, host: hostname(it.url),
-    out: affActive ? it.affiliate : it.url, isAff: affActive
+    out: affActive ? it.affiliate : it.url, isAff: affActive,
+    // Optional rich content (unique, hand-written) — see data.js. Falls back to template.
+    overview: it.overview || null,   // array of paragraph strings
+    bestFor: it.bestFor || null,     // array of bullet strings
+    faqs: it.faqs || null            // array of { q, a }
   };
 });
 
@@ -232,10 +236,13 @@ function toolPage(t) {
   var toolUrl = SITE_URL + '/tools/' + t.slug + '.html';
   var rel = t.isAff ? 'sponsored nofollow noopener noreferrer' : 'noopener noreferrer';
   var secLabels = t.sections.map(function (s) { return SECTION_LABEL[s]; }).join(', ');
-  var overview = t.name + ' is a widely used tool for ' + blurb + ', popular among ' + SECTION_AUDIENCE[sec] +
-    ' who follow ' + SECTION_PHRASE[sec] + '. ' + t.description +
-    ' It sits in the ' + t.group + ' category of the Market Hub directory and can be accessed at ' + t.host + '.';
-  var bestFor = BEST_FOR[t.group] || ['Researching ' + SECTION_PHRASE[sec], 'Saving time with a trusted source', 'Staying on top of market moves'];
+  // Overview: unique multi-paragraph content when provided, else a generated fallback.
+  var overviewHtml = (t.overview && t.overview.length)
+    ? t.overview.map(function (p) { return '    <p>' + fmt(p) + '</p>'; }).join('\n')
+    : '    <p>' + esc(t.name + ' is a widely used tool for ' + blurb + ', popular among ' + SECTION_AUDIENCE[sec] +
+        ' who follow ' + SECTION_PHRASE[sec] + '. ' + t.description +
+        ' It sits in the ' + t.group + ' category of the Market Hub directory and can be accessed at ' + t.host + '.') + '</p>';
+  var bestFor = t.bestFor || BEST_FOR[t.group] || ['Researching ' + SECTION_PHRASE[sec], 'Saving time with a trusted source', 'Staying on top of market moves'];
   var related = relatedTo(t);
 
   var ld = [
@@ -247,6 +254,12 @@ function toolPage(t) {
     { '@context': 'https://schema.org', '@type': 'WebApplication', name: t.name,
       applicationCategory: 'FinanceApplication', operatingSystem: 'Web', url: t.url, description: t.description }
   ];
+  if (t.faqs && t.faqs.length) {
+    ld.push({ '@context': 'https://schema.org', '@type': 'FAQPage',
+      mainEntity: t.faqs.map(function (f) {
+        return { '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } };
+      }) });
+  }
 
   var favSrc = 'https://www.google.com/s2/favicons?sz=64&amp;domain=' + encodeURIComponent(t.host);
 
@@ -292,9 +305,9 @@ siteHead('tools', '../') + '\n' +
 '      <span class="note">' + (t.isAff ? 'Partner link &mdash; we may earn a commission at no extra cost to you.' : 'Opens ' + esc(t.host) + ' in a new tab.') + '</span>\n' +
 '    </div>\n\n' +
 '    <h2>Overview</h2>\n' +
-'    <p>' + esc(overview) + '</p>\n\n' +
+overviewHtml + '\n\n' +
 '    <h2>Best for</h2>\n' +
-'    <ul class="points">' + bestFor.map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('') + '</ul>\n\n' +
+'    <ul class="points">' + bestFor.map(function (b) { return '<li>' + fmt(b) + '</li>'; }).join('') + '</ul>\n\n' +
 '    <h2>Key facts</h2>\n' +
 '    <ul class="facts">\n' +
 '      <li><b>Category:</b> ' + esc(secLabels) + '</li>\n' +
@@ -302,6 +315,12 @@ siteHead('tools', '../') + '\n' +
 '      <li><b>Website:</b> ' + esc(t.host) + '</li>\n' +
 '      <li><b>Listed on:</b> Market Hub</li>\n' +
 '    </ul>\n\n' +
+  (t.faqs && t.faqs.length
+    ? '    <h2>Frequently asked questions</h2>\n' +
+      t.faqs.map(function (f) {
+        return '    <details class="faq-item"><summary>' + esc(f.q) + '</summary><p>' + fmt(f.a) + '</p></details>';
+      }).join('\n') + '\n\n'
+    : '') +
   (related.length
     ? '    <h2>Related tools</h2>\n    <div class="related">' +
       related.map(function (r) { return '<a href="./' + r.slug + '.html">' + esc(r.name) + '</a>'; }).join('') +
