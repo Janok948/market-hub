@@ -634,6 +634,41 @@ function privacyPage() {
     '</body>\n</html>\n';
 }
 
+/* --------------------------------------------------------------- 404 */
+function notFoundPage() {
+  // Served by Vercel for any unknown path, so EVERY asset/link must be root-absolute.
+  return '<!DOCTYPE html>\n<html lang="en" data-theme="dark">\n<head>\n' +
+    '  <meta charset="UTF-8" />\n' +
+    '  <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n' +
+    '  <title>Page not found (404) | Market Hub</title>\n' +
+    '  <meta name="description" content="The page you were looking for could not be found." />\n' +
+    '  <meta name="robots" content="noindex, follow" />\n' +
+    '  <meta name="theme-color" content="#0b0c0f" />\n' +
+    '  <link rel="icon" href="' + FAVICON + '" />\n' +
+    '  <link rel="stylesheet" href="/styles.css" />\n' +
+    '  ' + THEME_SCRIPT + '\n' +
+    '</head>\n<body>\n' +
+    siteHead('', '/') + '\n' +
+    '  <main class="notfound">\n' +
+    '    <span class="nf-code">404</span>\n' +
+    '    <h1>This page wandered off</h1>\n' +
+    '    <p>The page you&rsquo;re looking for doesn&rsquo;t exist or has moved. Try a search, or jump back in.</p>\n' +
+    '    <form class="nf-search" action="/index.html" method="get" role="search">\n' +
+    '      <input type="search" name="q" placeholder="Search tools&hellip;" aria-label="Search tools" autocomplete="off" />\n' +
+    '      <button class="btn primary" type="submit">Search</button>\n' +
+    '    </form>\n' +
+    '    <div class="nf-actions">\n' +
+    '      <a class="btn primary" href="/index.html">Browse all tools</a>\n' +
+    '      <a class="btn" href="/learn/index.html">Free courses</a>\n' +
+    '    </div>\n' +
+    '  </main>\n' +
+    '  <footer class="legal">\n' +
+    '    <p><a href="/index.html">&larr; Back to Market Hub</a> &middot; <a href="/privacy.html">Privacy</a></p>\n' +
+    '  </footer>\n' +
+    footScript(false) +
+    '</body>\n</html>\n';
+}
+
 /* --------------------------------------------------------------- FAQ */
 var FAQS = [
   { q: 'Is Market Hub free to use?',
@@ -723,6 +758,7 @@ var learnDir = path.join(ROOT, 'learn');
 if (!fs.existsSync(learnDir)) fs.mkdirSync(learnDir, { recursive: true });
 fs.writeFileSync(path.join(learnDir, 'index.html'), learnIndex());
 fs.writeFileSync(path.join(ROOT, 'privacy.html'), privacyPage());
+fs.writeFileSync(path.join(ROOT, '404.html'), notFoundPage());
 COURSES.forEach(function (c, i) { fs.writeFileSync(path.join(learnDir, c.slug + '.html'), coursePage(c, i)); });
 
 var urls = [

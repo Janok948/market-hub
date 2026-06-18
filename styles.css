@@ -521,6 +521,30 @@ a { color: inherit; }
 }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
+/* --------------------------------------------------------------- 404 page */
+.notfound { max-width: 640px; margin: 0 auto; padding: 72px 22px 90px; text-align: center; }
+.nf-code {
+  display: block; font-size: 92px; font-weight: 800; line-height: 1; letter-spacing: -0.04em;
+  background: linear-gradient(180deg, var(--accent), #34d399);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.notfound h1 { font-size: 27px; letter-spacing: -0.02em; margin: 16px 0 8px; }
+.notfound p { color: var(--text-dim); font-size: 15px; line-height: 1.6; margin: 0 auto 26px; max-width: 46ch; }
+.nf-search { display: flex; gap: 9px; justify-content: center; margin: 0 auto 18px; max-width: 430px; }
+.nf-search input {
+  flex: 1; min-width: 0; padding: 11px 14px; font: inherit; font-size: 16px;
+  background: var(--bg-elev); border: 1px solid var(--border); border-radius: 11px; color: var(--text); outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.nf-search input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.nf-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+@media (max-width: 480px) {
+  .notfound { padding: 52px 16px 70px; }
+  .nf-code { font-size: 70px; }
+  .nf-search { flex-wrap: wrap; }
+  .nf-search .btn { flex: 1 1 100%; }
+}
+
 /* ---------------------------------------------------------- cookie consent */
 .consent {
   position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 65;
