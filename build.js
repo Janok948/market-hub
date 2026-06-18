@@ -208,6 +208,9 @@ function footScript(course) {
       'window.addEventListener("scroll",onScroll,{passive:true});window.addEventListener("resize",prog);paintChecks();onScroll();\n';
   }
   s += '})();</script>\n';
+  // Vercel Web Analytics (cookieless, privacy-friendly) — served at /_vercel/insights when enabled.
+  s += '  <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>\n' +
+    '  <script defer src="/_vercel/insights/script.js"></script>\n';
   return s;
 }
 
@@ -589,7 +592,7 @@ function privacyPage() {
       '<li><b>Hosting:</b> the site is served by our hosting provider, which processes requests to deliver the pages.</li>' +
     '</ul>\n' +
     '    <h2>Analytics</h2>\n' +
-    '    <p>We do not currently run third-party analytics or tracking scripts. If we add privacy-friendly analytics in future, we will update this page first.</p>\n' +
+    '    <p>We use <b>Vercel Web Analytics</b>, a privacy-friendly, <b>cookieless</b> service that measures aggregate page views and traffic sources. It does not use cookies, does not track you across other websites, and does not collect personally identifying information.</p>\n' +
     '    <h2>Your choices</h2>\n' +
     '    <ul class="points">' +
       '<li>Clear your stored preferences any time via your browser&rsquo;s site-data settings.</li>' +

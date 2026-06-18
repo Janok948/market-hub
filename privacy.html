@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | Market Hub</title>
   <meta name="description" content="How Market Hub handles your data: no tracking cookies, browser-only preferences, and an optional newsletter." />
-  <link rel="canonical" href="https://market-hub-xi.vercel.app/privacy.html" />
+  <link rel="canonical" href="https://getmarkethub.com/privacy.html" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0b0c0f" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Market Hub" />
   <meta property="og:title" content="Privacy Policy &mdash; Market Hub" />
   <meta property="og:description" content="How Market Hub handles your data and privacy." />
-  <meta property="og:url" content="https://market-hub-xi.vercel.app/privacy.html" />
-  <meta property="og:image" content="https://market-hub-xi.vercel.app/assets/og-cover.svg" />
+  <meta property="og:url" content="https://getmarkethub.com/privacy.html" />
+  <meta property="og:image" content="https://getmarkethub.com/assets/og-cover.svg" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230b0c0f'/><path d='M16 5l9 11-9 11-9-11z' fill='%2310b981'/></svg>" />
   <link rel="stylesheet" href="styles.css" />
   <script>try{var t=localStorage.getItem("marketHub.theme.v1");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t));}catch(e){}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Privacy Policy","url":"https://market-hub-xi.vercel.app/privacy.html","description":"How Market Hub handles your data and privacy."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Privacy Policy","url":"https://getmarkethub.com/privacy.html","description":"How Market Hub handles your data and privacy."}</script>
 </head>
 <body>
   <header class="topbar site-head"><div class="bar">
@@ -45,7 +45,7 @@
     <h2>Third-party services</h2>
     <ul class="points"><li><b>Favicons:</b> tool icons load from Google&rsquo;s public favicon service, so your browser requests an icon for each listed domain.</li><li><b>Outbound &amp; affiliate links:</b> clicking a tool takes you to a third-party site governed by its own privacy policy. Some links are affiliate links (marked &ldquo;Partner&rdquo;); the destination may set its own cookies to attribute a referral.</li><li><b>Hosting:</b> the site is served by our hosting provider, which processes requests to deliver the pages.</li></ul>
     <h2>Analytics</h2>
-    <p>We do not currently run third-party analytics or tracking scripts. If we add privacy-friendly analytics in future, we will update this page first.</p>
+    <p>We use <b>Vercel Web Analytics</b>, a privacy-friendly, <b>cookieless</b> service that measures aggregate page views and traffic sources. It does not use cookies, does not track you across other websites, and does not collect personally identifying information.</p>
     <h2>Your choices</h2>
     <ul class="points"><li>Clear your stored preferences any time via your browser&rsquo;s site-data settings.</li><li>Decline the cookie notice, or use private / incognito browsing.</li><li>Unsubscribe from the newsletter using the link in any email.</li></ul>
     <h2>Data retention &amp; security</h2>
@@ -76,5 +76,7 @@ fillCards();
 var CC="marketHub.consent.v1";
 try{if(localStorage.getItem(CC)==null){var cb=document.createElement("div");cb.className="consent";cb.setAttribute("role","dialog");cb.setAttribute("aria-label","Cookie notice");cb.innerHTML="<p class=\"consent-text\"><span class=\"consent-emoji\" aria-hidden=\"true\">🍪</span> We use cookies and local storage to remember your preferences and keep Market Hub working. Nothing is shared or sold. <a href=\"/privacy.html\">Privacy policy</a>.</p><div class=\"consent-actions\"><button class=\"btn\" type=\"button\" data-c=\"declined\">Decline</button><button class=\"btn primary\" type=\"button\" data-c=\"accepted\">Accept</button></div>";document.body.appendChild(cb);cb.addEventListener("click",function(e){var t=e.target.closest("[data-c]");if(!t)return;try{localStorage.setItem(CC,JSON.stringify(t.getAttribute("data-c")));}catch(er){}cb.parentNode.removeChild(cb);});}}catch(e){}
 })();</script>
+  <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

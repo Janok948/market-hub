@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://market-hub-xi.vercel.app/sitemap.xml
+Sitemap: https://getmarkethub.com/sitemap.xml
