@@ -521,6 +521,17 @@ a { color: inherit; }
 }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
+/* ------------------------------------------------------------ social row */
+.social-row { display: flex; gap: 10px; margin-top: 12px; }
+.social-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 9px;
+  color: var(--text-faint); background: var(--bg-elev); border: 1px solid var(--border);
+  transition: color 0.15s, border-color 0.15s, transform 0.15s;
+}
+.social-link:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+.social-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
 /* --------------------------------------------------------------- 404 page */
 .notfound { max-width: 640px; margin: 0 auto; padding: 72px 22px 90px; text-align: center; }
 .nf-code {
