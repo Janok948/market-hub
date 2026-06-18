@@ -361,6 +361,7 @@
       }));
     }
     foot.appendChild(el('span', { text: 'Links open in a new tab · saved locally in your browser' }));
+    foot.appendChild(el('a', { href: 'mailto:contact@getmarkethub.com', text: 'contact@getmarkethub.com' }));
   }
 
   // Reflect filter/search in the URL so views are shareable (and the SearchAction is valid).
