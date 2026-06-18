@@ -21,7 +21,7 @@ var SITE_URL = (process.env.SITE_URL || 'https://example.com').replace(/\/+$/, '
 var SITE_NAME = 'Market Hub';
 var INDEX_TITLE = 'Market Hub — Best Crypto & Stock Market Tools';
 var INDEX_DESC = 'A curated directory of the best tools for crypto and stock-market research — charting, market data, on-chain analytics, screeners, news and more, each with a description.';
-var OG_IMAGE = SITE_URL + '/assets/og-cover.svg';
+var OG_IMAGE = SITE_URL + '/assets/og-cover.png';  // PNG previews reliably on X/Facebook/LinkedIn
 var CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'privacy@example.com';  // set CONTACT_EMAIL to your real address
 
 global.window = {};
