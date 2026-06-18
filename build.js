@@ -167,12 +167,14 @@ var SOCIALS = [
   { name: 'Telegram',    href: '', icon: SOCIAL_ICONS.telegram },  // e.g. https://t.me/yourchannel
   { name: 'Instagram',   href: '', icon: SOCIAL_ICONS.instagram }  // e.g. https://instagram.com/yourhandle
 ];
+// Footer meta row: contact email (always) + social icons (each shown only once a URL is set).
 function socialRow() {
+  var contact = '<a class="footer-contact" href="mailto:' + esc(CONTACT_EMAIL) + '">' + esc(CONTACT_EMAIL) + '</a>';
   var on = SOCIALS.filter(function (s) { return s.href; });
-  if (!on.length) return '';
-  return '<div class="social-row">' + on.map(function (s) {
+  var icons = on.length ? '<div class="social-row">' + on.map(function (s) {
     return '<a class="social-link" href="' + esc(s.href) + '" target="_blank" rel="me noopener noreferrer" aria-label="' + esc(s.name) + '" title="' + esc(s.name) + '">' + s.icon + '</a>';
-  }).join('') + '</div>';
+  }).join('') + '</div>' : '';
+  return '    <div class="footer-meta">' + contact + icons + '</div>\n';
 }
 
 // Consistent top bar for every generated sub-page. active: 'tools' | 'learn'.
@@ -592,6 +594,7 @@ function learnIndex() {
     '  <footer class="legal">\n' +
     '    <p class="disclosure">Educational content only &mdash; nothing here is financial advice. Some tool links are affiliate links marked &ldquo;Partner&rdquo;.</p>\n' +
     '    <p><a href="../index.html">&larr; Back to Market Hub</a> &middot; <a href="../privacy.html">Privacy</a></p>\n' +
+    socialRow() +
     '  </footer>\n' +
     footScript(false) +
     '</body>\n</html>\n';
@@ -755,6 +758,13 @@ function seoBlock() {
     numberOfItems: tools.length, itemListElement: tools.map(function (t, i) {
       return { '@type': 'ListItem', position: i + 1, url: SITE_URL + '/tools/' + t.slug + '.html', name: t.name };
     }) };
+  // Organization entity — ties the brand to its contact email and social profiles (sameAs)
+  // so search engines can build a knowledge panel. sameAs auto-fills from configured SOCIALS.
+  var org = { '@context': 'https://schema.org', '@type': 'Organization', name: SITE_NAME, url: SITE_URL + '/',
+    logo: OG_IMAGE, email: CONTACT_EMAIL,
+    contactPoint: { '@type': 'ContactPoint', email: CONTACT_EMAIL, contactType: 'customer support' } };
+  var sameAs = SOCIALS.filter(function (s) { return s.href; }).map(function (s) { return s.href; });
+  if (sameAs.length) org.sameAs = sameAs;
   return [
     '  <link rel="canonical" href="' + esc(SITE_URL) + '/" />',
     '  <meta name="robots" content="index, follow" />',
@@ -768,7 +778,7 @@ function seoBlock() {
     '  <meta name="twitter:title" content="' + esc(INDEX_TITLE) + '" />',
     '  <meta name="twitter:description" content="' + esc(INDEX_DESC) + '" />',
     '  <meta name="twitter:image" content="' + esc(OG_IMAGE) + '" />',
-    '  <script type="application/ld+json">' + jsonld([web, itemList]) + '</script>'
+    '  <script type="application/ld+json">' + jsonld([web, itemList, org]) + '</script>'
   ].join('\n');
 }
 

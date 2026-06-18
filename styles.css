@@ -521,8 +521,13 @@ a { color: inherit; }
 }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
+/* --------------------------------------------------------- footer meta */
+.footer-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 12px; }
+.footer-contact { font-size: 13px; color: var(--text-dim); text-decoration: none; border-bottom: 1px dotted var(--text-faint); }
+.footer-contact:hover { color: var(--accent); border-color: var(--accent); }
+
 /* ------------------------------------------------------------ social row */
-.social-row { display: flex; gap: 10px; margin-top: 12px; }
+.social-row { display: flex; gap: 10px; }
 .social-link {
   display: inline-flex; align-items: center; justify-content: center;
   width: 34px; height: 34px; border-radius: 9px;
