@@ -159,15 +159,17 @@ var SOCIAL_ICONS = {
   youtube: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.3-.42-4.88a2.53 2.53 0 00-1.78-1.79C19.2 5 12 5 12 5s-7.2 0-8.8.33a2.53 2.53 0 00-1.78 1.79C1 8.7 1 12 1 12s0 3.3.42 4.88c.23.87.91 1.55 1.78 1.79C4.8 19 12 19 12 19s7.2 0 8.8-.33a2.53 2.53 0 001.78-1.79C23 15.3 23 12 23 12zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>',
   telegram: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M21.94 4.4l-3.3 15.56c-.24 1.1-.9 1.37-1.82.85l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.01.5l.36-5.14L17.1 7.3c.4-.35-.08-.55-.62-.2L6.6 13.42l-4.98-1.55c-1.08-.34-1.1-1.08.23-1.6l18.86-7.27c.9-.33 1.69.2 1.4 1.3z"/></svg>',
   instagram: '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>',
-  reddit: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M22 11.5a2.06 2.06 0 00-3.5-1.44 10.1 10.1 0 00-5.06-1.55l.86-3.86 2.7.6a1.5 1.5 0 10.16-.98l-3.2-.71a.5.5 0 00-.59.38l-1 4.5a10.1 10.1 0 00-5.2 1.55A2.06 2.06 0 103.5 13.2a4 4 0 00-.05.62c0 3.18 3.8 5.76 8.5 5.76s8.5-2.58 8.5-5.76a4 4 0 00-.05-.62A2.06 2.06 0 0022 11.5zM7.3 13a1.3 1.3 0 112.6 0 1.3 1.3 0 01-2.6 0zm7.18 3.6a4.6 4.6 0 01-2.98.93 4.6 4.6 0 01-2.98-.93.4.4 0 11.52-.6 3.8 3.8 0 002.46.74 3.8 3.8 0 002.46-.74.4.4 0 11.52.6zm-.39-2.3a1.3 1.3 0 110-2.6 1.3 1.3 0 010 2.6z"/></svg>'
+  reddit: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M22 11.5a2.06 2.06 0 00-3.5-1.44 10.1 10.1 0 00-5.06-1.55l.86-3.86 2.7.6a1.5 1.5 0 10.16-.98l-3.2-.71a.5.5 0 00-.59.38l-1 4.5a10.1 10.1 0 00-5.2 1.55A2.06 2.06 0 103.5 13.2a4 4 0 00-.05.62c0 3.18 3.8 5.76 8.5 5.76s8.5-2.58 8.5-5.76a4 4 0 00-.05-.62A2.06 2.06 0 0022 11.5zM7.3 13a1.3 1.3 0 112.6 0 1.3 1.3 0 01-2.6 0zm7.18 3.6a4.6 4.6 0 01-2.98.93 4.6 4.6 0 01-2.98-.93.4.4 0 11.52-.6 3.8 3.8 0 002.46.74 3.8 3.8 0 002.46-.74.4.4 0 11.52.6zm-.39-2.3a1.3 1.3 0 110-2.6 1.3 1.3 0 010 2.6z"/></svg>',
+  discord: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.32 4.37A19.8 19.8 0 0015.45 3l-.24.44a18.3 18.3 0 015.4 2.7 14.4 14.4 0 00-11.22 0 18.3 18.3 0 015.4-2.7L14.55 3a19.8 19.8 0 00-4.88 1.37C1.05 8.46.34 12.44.69 16.36a19.9 19.9 0 005.65 2.84l.92-1.27c-.55-.2-1.07-.45-1.57-.74l.39-.29a14.2 14.2 0 0011.84 0l.39.29c-.5.29-1.02.54-1.57.74l.92 1.27a19.9 19.9 0 005.65-2.84c.42-4.55-.72-8.5-3.1-11.99zM8.7 14.16c-.95 0-1.74-.88-1.74-1.96s.77-1.96 1.74-1.96 1.76.89 1.74 1.96c0 1.08-.78 1.96-1.74 1.96zm6.6 0c-.95 0-1.74-.88-1.74-1.96s.77-1.96 1.74-1.96 1.76.89 1.74 1.96c0 1.08-.77 1.96-1.74 1.96z"/></svg>'
 };
 var SOCIALS = [
   { name: 'X (Twitter)', href: 'https://x.com/GetMarketHub', icon: SOCIAL_ICONS.x },
   { name: 'Reddit',      href: 'https://www.reddit.com/user/GetMarketHub/', icon: SOCIAL_ICONS.reddit },
   { name: 'YouTube',     href: 'https://www.youtube.com/channel/UCUm7CEWk7h2iXyD45oHF_zA', icon: SOCIAL_ICONS.youtube },
+  { name: 'Instagram',   href: 'https://www.instagram.com/getmarkethub/', icon: SOCIAL_ICONS.instagram },
   { name: 'LinkedIn',    href: '', icon: SOCIAL_ICONS.linkedin },  // e.g. https://www.linkedin.com/company/...
   { name: 'Telegram',    href: '', icon: SOCIAL_ICONS.telegram },  // e.g. https://t.me/yourchannel
-  { name: 'Instagram',   href: '', icon: SOCIAL_ICONS.instagram }  // e.g. https://instagram.com/yourhandle
+  { name: 'Discord',     href: '', icon: SOCIAL_ICONS.discord }    // e.g. https://discord.gg/yourinvite
 ];
 // Footer meta row: contact email (always) + social icons (each shown only once a URL is set).
 function socialRow() {
