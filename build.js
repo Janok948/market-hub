@@ -99,7 +99,7 @@ function primarySection(t) { for (var i = 0; i < SECTION_ORDER.length; i++) { if
 function groupRank(g) { var i = GROUP_ORDER.indexOf(g); return i < 0 ? 999 : i; }
 
 var FAVICON = "/assets/logo-mark.svg";
-var BRAND_MARK = '<svg width="32" height="32" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#059669"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#bm)"/><polyline points="14,44 26,33 38,38 50,18" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><g fill="#fff"><circle cx="14" cy="44" r="3.4"/><circle cx="26" cy="33" r="3.4"/><circle cx="38" cy="38" r="3.4"/><circle cx="50" cy="18" r="4.4"/></g></svg>';
+var BRAND_MARK = '<svg width="36" height="36" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#059669"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#bm)"/><polyline points="14,44 26,33 38,38 50,18" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><g fill="#fff"><circle cx="14" cy="44" r="3.4"/><circle cx="26" cy="33" r="3.4"/><circle cx="38" cy="38" r="3.4"/><circle cx="50" cy="18" r="4.4"/></g></svg>';
 
 /* ----------------------------------------------------- normalize tools */
 var used = {};
