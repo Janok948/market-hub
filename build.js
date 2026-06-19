@@ -98,8 +98,8 @@ function hostname(u) { try { return new URL(u).hostname.replace(/^www\./, ''); }
 function primarySection(t) { for (var i = 0; i < SECTION_ORDER.length; i++) { if (t.sections.indexOf(SECTION_ORDER[i]) >= 0) return SECTION_ORDER[i]; } return 'stocks'; }
 function groupRank(g) { var i = GROUP_ORDER.indexOf(g); return i < 0 ? 999 : i; }
 
-var FAVICON = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230b0c0f'/><path d='M16 5l9 11-9 11-9-11z' fill='%2310b981'/></svg>";
-var BRAND_MARK = '<svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#10b981" opacity="0.14"/><path d="M16 5l9 11-9 11-9-11z" fill="#10b981"/></svg>';
+var FAVICON = "/assets/logo-mark.svg";
+var BRAND_MARK = '<svg width="32" height="32" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#059669"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#bm)"/><polyline points="14,44 26,33 38,38 50,18" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><g fill="#fff"><circle cx="14" cy="44" r="3.4"/><circle cx="26" cy="33" r="3.4"/><circle cx="38" cy="38" r="3.4"/><circle cx="50" cy="18" r="4.4"/></g></svg>';
 
 /* ----------------------------------------------------- normalize tools */
 var used = {};
@@ -767,7 +767,7 @@ function seoBlock() {
   // Organization entity — ties the brand to its contact email and social profiles (sameAs)
   // so search engines can build a knowledge panel. sameAs auto-fills from configured SOCIALS.
   var org = { '@context': 'https://schema.org', '@type': 'Organization', name: SITE_NAME, url: SITE_URL + '/',
-    logo: OG_IMAGE, email: CONTACT_EMAIL,
+    logo: SITE_URL + '/assets/logo-avatar-512.png', email: CONTACT_EMAIL,
     contactPoint: { '@type': 'ContactPoint', email: CONTACT_EMAIL, contactType: 'customer support' } };
   var sameAs = SOCIALS.filter(function (s) { return s.href; }).map(function (s) { return s.href; });
   if (sameAs.length) org.sameAs = sameAs;
