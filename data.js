@@ -31,6 +31,7 @@ window.SEED_LINKS = [
     sections: ['stocks', 'crypto'],
     group: 'Charting & Technical Analysis',
     affiliate: 'https://www.tradingview.com/?aff_id=YOUR_ID',  // replace YOUR_ID with your TradingView affiliate id
+    image: '/assets/screenshots/tradingview.webp',
     overview: [
       "TradingView is the most widely used charting platform on the web, pairing professional-grade price charts with a huge social network of traders. It runs entirely in the browser, covers stocks, crypto, forex, futures and indices, and has become such a standard that many brokers and exchanges embed its charts directly into their own platforms.",
       "Its real strength is breadth without clutter: hundreds of built-in indicators, a custom scripting language (Pine Script) for building your own studies and strategies, multi-chart layouts, and flexible alerts that can fire on price, an indicator or a trendline. The free tier covers most of what a beginner needs, while paid plans add more indicators and alerts per chart, extra layouts and faster data."
