@@ -79,6 +79,7 @@ window.SEED_LINKS = [
     description: 'The most popular free finance hub: quotes, financial statements, analyst targets, news, and watchlists for virtually any ticker.',
     sections: ['stocks'],
     group: 'Market Data & Quotes',
+    image: '/assets/screenshots/yahoo-finance.webp',
     overview: [
       "Yahoo Finance is the most popular free financial hub on the web, giving fast access to quotes, charts, news and fundamental data for virtually any stock, ETF, index, currency or major cryptocurrency. For millions of retail investors it's the default first place to check a ticker.",
       "It's a capable daily driver: build watchlists, scan analyst price targets and upcoming earnings dates, read aggregated news, review financial statements and key ratios, and download historical prices as CSV. A premium tier adds deeper research and screening, but the free version covers most everyday needs."
@@ -134,6 +135,7 @@ window.SEED_LINKS = [
     description: 'Lightning-fast stock screener with a famous market heatmap and visual filters — a daily go-to for many traders.',
     sections: ['stocks'],
     group: 'Screeners',
+    image: '/assets/screenshots/finviz.webp',
     overview: [
       "Finviz is a fast, visual stock screener and market-overview tool best known for its colour-coded market heatmap, which shows the entire US market's performance at a single glance. It's a daily go-to for equity traders who want to read the market's mood quickly.",
       "The free screener filters thousands of stocks by descriptive, fundamental and technical criteria, with charts, news, insider transactions and analyst data on every ticker. Finviz Elite adds real-time data, intraday charts, advanced screener filters and backtesting for more serious users."
@@ -156,6 +158,7 @@ window.SEED_LINKS = [
     description: 'Clean, free financial statements, ratios, and a capable screener with none of the usual paywall friction.',
     sections: ['stocks'],
     group: 'Screeners',
+    image: '/assets/screenshots/stock-analysis.webp',
     overview: [
       "Stock Analysis (stockanalysis.com) has become a favourite for its clean, fast, genuinely free access to financial data. Where many sites bury statements behind paywalls, it presents income statements, balance sheets, cash flows and ratios clearly and without friction.",
       "Alongside per-company data it offers a capable stock screener, IPO and earnings calendars, and ETF information — all in a refreshingly uncluttered interface. It's an excellent first stop for fundamental research before reaching for heavier paid tools."
@@ -395,6 +398,7 @@ window.SEED_LINKS = [
     description: 'The most-visited price and market-cap aggregator, with rankings, watchlists, and event data.',
     sections: ['crypto'],
     group: 'Market Data & Aggregators',
+    image: '/assets/screenshots/coinmarketcap.webp',
     overview: [
       "CoinMarketCap is the most-visited cryptocurrency price aggregator, tracking prices, market caps and trading volumes for thousands of assets. For many people it's the very first site they use to check a coin's price.",
       "It offers rankings, watchlists, historical data, exchange listings and an events calendar, plus beginner-friendly educational content. CoinMarketCap is owned by Binance, so some users cross-reference it with independent aggregators such as CoinGecko for listings and data."
@@ -736,6 +740,7 @@ window.SEED_LINKS = [
     sections: ['crypto'],
     group: 'Exchanges',
     affiliate: 'https://www.kraken.com/sign-up?ref=YOUR_ID',  // paste your exact Kraken affiliate link
+    image: '/assets/screenshots/kraken.webp',
     overview: [
       "Kraken is one of the longest-running cryptocurrency exchanges, founded in 2011, and has built its reputation on security, reliability and strong fiat support. It's a common pick for users who value a solid track record and regulatory engagement over having the absolute widest coin selection.",
       "The standard interface keeps buying and selling simple, while Kraken Pro adds full charting, advanced order types and lower fees on the same account. Kraken supports spot and (where permitted) margin and futures trading, staking, and a wide range of fiat funding options across many countries."
@@ -782,6 +787,7 @@ window.SEED_LINKS = [
     sections: ['crypto'],
     group: 'Exchanges',
     affiliate: 'https://www.okx.com/join/YOUR_ID',  // paste your exact OKX referral link
+    image: '/assets/screenshots/okx.webp',
     overview: [
       "OKX is a major global cryptocurrency exchange offering a broad mix of spot, margin and derivatives markets alongside a built-in Web3 wallet and DeFi access. It's known for deep liquidity and a product range that spans both centralised trading and on-chain activity.",
       "The OKX app combines a custodial exchange with a self-custody Web3 wallet, so you can move between simple buying, advanced trading and DeFi from one place. As with all major exchanges, feature availability varies by region due to local regulation."
