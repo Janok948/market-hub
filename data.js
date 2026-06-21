@@ -109,6 +109,7 @@ window.SEED_LINKS = [
     description: 'A free, browser-based take on the Bloomberg Terminal, with rich dashboards for fundamentals, estimates, and cross-asset macro.',
     sections: ['stocks'],
     group: 'Market Data & Quotes',
+    image: '/assets/screenshots/koyfin.webp',
     overview: [
       "Koyfin is often described as a free, browser-based alternative to the Bloomberg Terminal. It packs an enormous amount of data — equities, ETFs, funds, analyst estimates, and macro — into customisable dashboards that feel professional without the professional price tag.",
       "It's especially strong for fundamental and cross-asset analysis: compare companies side by side, track estimate revisions, build watchlists with custom columns, and overlay macro series like rates and currencies. A generous free tier covers most retail needs, with paid plans unlocking deeper history and more dashboards."
