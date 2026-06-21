@@ -737,7 +737,12 @@
     sugItems = items; sugActive = -1;
     suggestBox.appendChild(el('div', { class: 'sug-head' }, [
       el('span', { text: items.length + (items.length === 1 ? ' match' : ' matches') }),
-      el('span', { text: '↑↓ navigate · ↵ open' })
+      el('span', { class: 'sug-hint' }, [
+        el('kbd', { text: '↑' }), el('kbd', { text: '↓' }),
+        el('span', { class: 'sug-hint-t', text: 'navigate' }),
+        el('kbd', { text: '↵' }),
+        el('span', { class: 'sug-hint-t', text: 'open' })
+      ])
     ]));
     items.forEach(function (it, i) { suggestBox.appendChild(sugRow(it, i, q)); });
   }

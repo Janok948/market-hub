@@ -136,9 +136,19 @@ a { color: inherit; }
 
 .sug-head {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 5px 10px 6px; margin-bottom: 2px;
+  padding: 6px 10px 7px; margin-bottom: 2px;
   font-size: 10.5px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
   color: var(--text-faint);
+}
+.sug-hint { display: inline-flex; align-items: center; gap: 6px; }
+.sug-hint-t { color: var(--text-faint); }
+.sug-head kbd {
+  font-family: inherit; font-size: 13px; line-height: 1; font-weight: 700;
+  min-width: 20px; height: 20px; padding: 0 5px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border-h); border-radius: 6px;
+  background: var(--bg-elev); color: var(--text-dim);
+  box-shadow: 0 1px 0 var(--border-h);
 }
 .sug-row {
   display: flex; align-items: center; gap: 11px;
