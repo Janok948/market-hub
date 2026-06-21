@@ -100,7 +100,8 @@ window.SEED_LINKS = [
     url: 'https://www.google.com/finance',
     description: 'Fast, clutter-free quotes and index overviews woven tightly into Google Search — ideal for a quick check.',
     sections: ['stocks'],
-    group: 'Market Data & Quotes'
+    group: 'Market Data & Quotes',
+    image: '/assets/screenshots/google-finance.webp'
   },
   {
     name: 'Koyfin',
