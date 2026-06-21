@@ -167,7 +167,8 @@
   }
 
   function faviconEl(item) {
-    var url = faviconUrl(item.url);
+    if (item.icon === 'mono') return monogram(item.name);  // tools with no usable favicon
+    var url = item.icon || faviconUrl(item.url);
     if (!url) return monogram(item.name);
     var img = el('img', { class: 'fav', src: url, alt: '', loading: 'lazy', width: '34', height: '34' });
     img.addEventListener('error', function () { img.replaceWith(monogram(item.name)); });

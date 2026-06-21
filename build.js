@@ -116,9 +116,24 @@ var tools = LINKS.map(function (it) {
     // Optional rich content (unique, hand-written) — see data.js. Falls back to template.
     overview: it.overview || null,   // array of paragraph strings
     bestFor: it.bestFor || null,     // array of bullet strings
-    faqs: it.faqs || null            // array of { q, a }
+    faqs: it.faqs || null,           // array of { q, a }
+    icon: it.icon || null            // 'mono' to force a letter tile, or a custom URL
   };
 });
+
+// Favicon HTML: a coloured monogram tile when no usable favicon exists, else an <img>.
+function monoFav(name, sizeClass) {
+  var s = String(name || '?').trim(), hue = 0;
+  for (var i = 0; i < s.length; i++) hue = (hue * 31 + s.charCodeAt(i)) % 360;
+  return '<span class="fav fav-mono' + (sizeClass ? ' ' + sizeClass : '') +
+    '" style="background:hsl(' + hue + ',48%,36%)" aria-hidden="true">' +
+    esc((s.charAt(0) || '?').toUpperCase()) + '</span>';
+}
+function favHtml(t, attrs) {
+  if (t.icon === 'mono') return monoFav(t.name);
+  var src = t.icon || ('https://www.google.com/s2/favicons?sz=64&amp;domain=' + encodeURIComponent(t.host));
+  return '<img class="fav" src="' + src + '" alt="" ' + (attrs || '') + ' loading="lazy" onerror="this.style.display=\'none\'" />';
+}
 
 function relatedTo(t) {
   var list = tools.filter(function (x) { return x.slug !== t.slug && x.group === t.group; });
@@ -324,7 +339,7 @@ siteHead('tools', '../') + '\n' +
 '  <main class="tool-wrap tool">\n' +
 '    <nav class="crumbs"><a href="../index.html">Home</a> &rsaquo; <a href="../index.html?filter=' + sec + '">' + esc(SECTION_LABEL[sec]) + '</a> &rsaquo; ' + esc(t.name) + '</nav>\n' +
 '    <div class="tool-head">\n' +
-'      <img class="fav" src="' + favSrc + '" alt="" width="46" height="46" loading="lazy" onerror="this.style.display=\'none\'" />\n' +
+'      ' + favHtml(t, 'width="46" height="46"') + '\n' +
 '      <div>\n' +
 '        <h1>' + esc(t.name) + '</h1>\n' +
 '        <p class="tool-sub">' + esc(secLabels) + ' &middot; ' + esc(t.group) + '</p>\n' +
@@ -383,7 +398,7 @@ function inlineToolCta(slug, text) {
   var rel = t.isAff ? 'sponsored nofollow noopener noreferrer' : 'noopener noreferrer';
   var fav = 'https://www.google.com/s2/favicons?sz=64&amp;domain=' + encodeURIComponent(t.host);
   return '<a class="course-tool' + (t.isAff ? ' is-affiliate' : '') + '" href="' + esc(t.out) + '" target="_blank" rel="' + rel + '">' +
-    '<img class="fav" src="' + fav + '" alt="" width="40" height="40" loading="lazy" onerror="this.style.display=\'none\'" />' +
+    favHtml(t, 'width="40" height="40"') +
     '<span class="ct-body"><span class="ct-eyebrow">Recommended tool</span>' +
     '<span class="ct-name">' + esc(t.name) + (t.isAff ? ' <span class="tag-partner">Partner</span>' : '') + '</span>' +
     '<span class="ct-desc">' + esc(text || t.description) + '</span></span>' +

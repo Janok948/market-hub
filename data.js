@@ -205,7 +205,8 @@ window.SEED_LINKS = [
     url: 'https://www.gurufocus.com',
     description: 'Value-investing data, guru and institutional holdings, and proprietary valuation metrics like the GF Value.',
     sections: ['stocks'],
-    group: 'Fundamentals & Research'
+    group: 'Fundamentals & Research',
+    icon: 'mono'
   },
   {
     name: 'TIKR',
@@ -259,14 +260,16 @@ window.SEED_LINKS = [
     url: 'https://www.barchart.com',
     description: 'Deep data across stocks, futures, and commodities, with strong options chains and technical screeners.',
     sections: ['stocks'],
-    group: 'Options & Derivatives'
+    group: 'Options & Derivatives',
+    icon: 'mono'
   },
   {
     name: 'Market Chameleon',
     url: 'https://marketchameleon.com',
     description: 'Options-focused analytics — implied volatility, expected earnings moves, and premium strategy screeners.',
     sections: ['stocks'],
-    group: 'Options & Derivatives'
+    group: 'Options & Derivatives',
+    icon: 'mono'
   },
   {
     name: 'OptionStrat',
@@ -289,7 +292,8 @@ window.SEED_LINKS = [
     url: 'https://www.earningswhispers.com',
     description: 'The go-to earnings calendar with whisper numbers, expected moves, and confirmed report dates.',
     sections: ['stocks'],
-    group: 'Earnings & Calendars'
+    group: 'Earnings & Calendars',
+    icon: 'mono'
   },
 
   // News & Analysis
@@ -855,6 +859,7 @@ window.SEED_LINKS = [
     description: "The St. Louis Fed's vast, free database of U.S. and global economic series — the macro gold standard.",
     sections: ['macro'],
     group: 'Economic Data',
+    icon: 'mono',
     overview: [
       "FRED (Federal Reserve Economic Data), maintained by the Federal Reserve Bank of St. Louis, is the gold standard for free macroeconomic data. It hosts hundreds of thousands of time series — GDP, inflation, interest rates, employment, money supply and far more — from official sources worldwide.",
       "What makes FRED so useful is how easy it is to chart, combine and transform series: overlay inflation against rates, view year-over-year changes, or build custom comparisons, then export the data. It's the primary source professionals and analysts reach for when they want the real numbers rather than a headline."
