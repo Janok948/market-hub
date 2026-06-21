@@ -221,7 +221,9 @@ function siteHead(active, prefix) {
 // End-of-body script: wires the theme toggle on every sub-page, plus (on courses)
 // the reading-progress bar and the scroll-spy that highlights the current lesson.
 function footScript(course) {
-  var s = '  <script>(function(){\n' +
+  var s = '  <script src="/data.js"></script>\n' +
+    '  <script src="/suggest.js" defer></script>\n' +
+    '  <script>(function(){\n' +
     'var d=document.documentElement,K="marketHub.theme.v1",SUN=' + JSON.stringify(SUN_SVG) + ',MOON=' + JSON.stringify(MOON_SVG) + ';\n' +
     'function get(){return d.getAttribute("data-theme")||"dark";}\n' +
     'var b=document.getElementById("themeBtn");\n' +
