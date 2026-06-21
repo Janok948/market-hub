@@ -156,8 +156,8 @@ a { color: inherit; }
   flex: 0 0 auto; font-size: 10.5px; font-weight: 600; padding: 2px 9px; border-radius: 999px;
   color: var(--cat); background: color-mix(in srgb, var(--cat) 15%, transparent);
 }
-.sug-go { flex: 0 0 auto; color: var(--text-faint); font-size: 13px; opacity: 0; transition: opacity 0.12s; }
-.sug-row:hover .sug-go, .sug-row.active .sug-go { opacity: 0.85; }
+.sug-go { flex: 0 0 auto; color: var(--text-faint); font-size: 17px; opacity: 0.45; transition: opacity 0.12s, color 0.12s, transform 0.12s; }
+.sug-row:hover .sug-go, .sug-row.active .sug-go { opacity: 1; color: var(--accent); transform: translateX(1px); }
 .sug-empty { padding: 16px 12px; text-align: center; color: var(--text-faint); font-size: 13px; }
 
 .actions { display: flex; align-items: center; gap: 9px; flex: 0 0 auto; }
