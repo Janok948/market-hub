@@ -177,10 +177,13 @@
   function card(item) {
     var aff = isActiveAffiliate(item);
     var acc = item.isCustom ? 'green' : groupAccent(item.group);
-    var a = el('a', {
-      class: 'card acc-' + acc + (item.isCustom ? ' is-custom' : '') + (aff ? ' is-affiliate' : ''),
-      href: linkHref(item), target: '_blank',
-      rel: aff ? 'sponsored nofollow noopener noreferrer' : 'noopener noreferrer'
+    // Seed tools open their own detail page (overview, FAQ, "Visit" button); custom links go straight out.
+    var a = el('a', item.isCustom ? {
+      class: 'card acc-green is-custom',
+      href: linkHref(item), target: '_blank', rel: 'noopener noreferrer'
+    } : {
+      class: 'card acc-' + acc + (aff ? ' is-affiliate' : ''),
+      href: 'tools/' + slugify(item.name) + '.html'
     });
 
     var top = el('div', { class: 'card-top' }, [
@@ -360,7 +363,7 @@
         onclick: function () { hiddenIds = []; save(STORE.hidden, hiddenIds); toast('Hidden links restored'); render(); }
       }));
     }
-    foot.appendChild(el('span', { text: 'Links open in a new tab · saved locally in your browser' }));
+    foot.appendChild(el('span', { text: 'Free · no account · saved locally in your browser' }));
     foot.appendChild(el('a', { href: 'mailto:contact@getmarkethub.com', text: 'contact@getmarkethub.com' }));
   }
 
@@ -709,9 +712,12 @@
     var sec = (item.sections && item.sections[0]) || 'stocks';
     var aff = isActiveAffiliate(item);
     var meta = (item.group ? item.group + ' · ' : '') + hostname(item.url);
-    var row = el('a', {
+    // Seed tools open their detail page; custom links open externally.
+    var row = el('a', item.isCustom ? {
       class: 'sug-row', role: 'option', id: 'sug-' + idx, href: linkHref(item),
-      target: '_blank', rel: aff ? 'sponsored nofollow noopener noreferrer' : 'noopener noreferrer'
+      target: '_blank', rel: 'noopener noreferrer'
+    } : {
+      class: 'sug-row', role: 'option', id: 'sug-' + idx, href: 'tools/' + slugify(item.name) + '.html'
     }, [
       faviconEl(item),
       el('span', { class: 'sug-main' }, [
@@ -722,7 +728,7 @@
       el('span', { class: 'sug-go', text: '↵', 'aria-hidden': 'true' })
     ]);
     row.addEventListener('mousemove', function () { if (sugActive !== idx) setActiveSug(idx); });
-    row.addEventListener('click', function () { toast('Opening ' + item.name + ' ↗'); closeSuggest(); });
+    row.addEventListener('click', function () { if (item.isCustom) toast('Opening ' + item.name + ' ↗'); closeSuggest(); });
     return row;
   }
 
