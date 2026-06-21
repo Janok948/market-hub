@@ -411,7 +411,9 @@ a { color: inherit; }
 
 .fav {
   width: 34px; height: 34px; border-radius: 9px; flex: 0 0 34px;
-  background: var(--bg-elev); object-fit: contain; padding: 5px;
+  /* Always a light chip so any favicon (dark- or colour-on-transparent) stays
+     visible in both light and dark mode. Brand icons are designed for white. */
+  background: #ffffff; object-fit: contain; padding: 5px;
   border: 1px solid var(--border);
 }
 .fav-mono {
@@ -972,7 +974,7 @@ body.is-browsing .hero { display: none; }
 .course-tool::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); opacity: 0.55; transition: 0.16s; }
 .course-tool:hover { border-color: var(--border-h); background: var(--card-hover); transform: translateY(-1px); box-shadow: var(--shadow); }
 .course-tool:hover::before { opacity: 1; }
-.course-tool .fav { width: 40px; height: 40px; flex-basis: 40px; border-radius: 10px; padding: 6px; background: var(--bg-elev); border: 1px solid var(--border); }
+.course-tool .fav { width: 40px; height: 40px; flex-basis: 40px; border-radius: 10px; padding: 6px; background: #ffffff; border: 1px solid var(--border); }
 .ct-body { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 2px; }
 .ct-eyebrow { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-faint); }
 .ct-name { font-weight: 650; font-size: 14.5px; color: var(--text); display: flex; align-items: center; gap: 7px; }
