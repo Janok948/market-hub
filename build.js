@@ -117,7 +117,8 @@ var tools = LINKS.map(function (it) {
     overview: it.overview || null,   // array of paragraph strings
     bestFor: it.bestFor || null,     // array of bullet strings
     faqs: it.faqs || null,           // array of { q, a }
-    icon: it.icon || null            // 'mono' to force a letter tile, or a custom URL
+    icon: it.icon || null,           // 'mono' to force a letter tile, or a custom URL
+    image: it.image || null          // optional screenshot on the tool page (root-absolute path or URL)
   };
 });
 
@@ -350,6 +351,7 @@ siteHead('tools', '../') + '\n' +
 '      <a class="btn primary" href="' + esc(t.out) + '" target="_blank" rel="' + rel + '">Visit ' + esc(t.name) + ' &#8599;</a>\n' +
 '      <span class="note">' + (t.isAff ? 'Partner link &mdash; we may earn a commission at no extra cost to you.' : 'Opens ' + esc(t.host) + ' in a new tab.') + '</span>\n' +
 '    </div>\n\n' +
+  (t.image ? '    <figure class="tool-shot"><img src="' + esc(t.image) + '" alt="' + esc(t.name + ' screenshot') + '" loading="lazy" /></figure>\n\n' : '') +
 '    <h2>Overview</h2>\n' +
 overviewHtml + '\n\n' +
 '    <h2>Best for</h2>\n' +

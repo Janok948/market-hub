@@ -6,6 +6,12 @@
  *   affiliate: OPTIONAL. Your referral/affiliate URL for this tool. When set (and the
  *              placeholder is replaced), the card links here instead of `url`, shows a
  *              "Partner" badge, and gets rel="sponsored" — and the footer disclosure shows.
+ *   overview / bestFor / faqs: OPTIONAL rich content for the tool's /tools/<slug>.html page
+ *              (overview: [paragraphs], bestFor: [bullets], faqs: [{q,a}]). Falls back to a template.
+ *   icon:      OPTIONAL. 'mono' forces a coloured letter tile (for tools with no real favicon),
+ *              or a custom favicon URL.
+ *   image:     OPTIONAL. A screenshot shown on the tool page. Use a root-absolute path like
+ *              '/assets/screenshots/<slug>.png' (see assets/screenshots/README.md) or a full URL.
  *
  * MONETIZATION: the highest-value programs in this niche are crypto-exchange referrals
  * and trading-tool affiliates. A few slots are pre-filled with `YOUR_ID` placeholders
