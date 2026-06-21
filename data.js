@@ -46,7 +46,22 @@ window.SEED_LINKS = [
     url: 'https://stockcharts.com',
     description: 'Veteran technical-analysis suite known for clean point-&-figure charts, market-breadth indicators, and sector-rotation tools.',
     sections: ['stocks'],
-    group: 'Charting & Technical Analysis'
+    group: 'Charting & Technical Analysis',
+    overview: [
+      "StockCharts is a long-established technical-analysis platform built specifically for stock and ETF chartists. It's known for clean, reliable charting and a strong library of educational material — including the widely cited ChartSchool reference.",
+      "Beyond standard charts, it shines at market-breadth and sector-rotation analysis: point-and-figure charts, relative-strength tools, and curated indicator sets that help you read the health of the whole market, not just one ticker. A free tier covers the basics, with paid plans for real-time data and saved chartlists."
+    ],
+    bestFor: [
+      "Clean, dependable charting for stocks and ETFs",
+      "Market-breadth and sector-rotation analysis",
+      "Point-and-figure and relative-strength studies",
+      "Learning technical analysis via ChartSchool"
+    ],
+    faqs: [
+      { q: "Is StockCharts free?", a: "There's a free version with basic charting; paid memberships add real-time data, more saved chartlists, scans and additional indicators." },
+      { q: "What is StockCharts best known for?", a: "Its clean charts, market-breadth indicators, sector-rotation tools, and the free ChartSchool — one of the best technical-analysis references online." },
+      { q: "Does StockCharts cover crypto?", a: "It focuses on stocks, ETFs, indices and some futures/forex. For crypto charting, TradingView is a better fit." }
+    ]
   },
 
   // Market Data & Quotes
@@ -84,7 +99,22 @@ window.SEED_LINKS = [
     url: 'https://www.koyfin.com',
     description: 'A free, browser-based take on the Bloomberg Terminal, with rich dashboards for fundamentals, estimates, and cross-asset macro.',
     sections: ['stocks'],
-    group: 'Market Data & Quotes'
+    group: 'Market Data & Quotes',
+    overview: [
+      "Koyfin is often described as a free, browser-based alternative to the Bloomberg Terminal. It packs an enormous amount of data — equities, ETFs, funds, analyst estimates, and macro — into customisable dashboards that feel professional without the professional price tag.",
+      "It's especially strong for fundamental and cross-asset analysis: compare companies side by side, track estimate revisions, build watchlists with custom columns, and overlay macro series like rates and currencies. A generous free tier covers most retail needs, with paid plans unlocking deeper history and more dashboards."
+    ],
+    bestFor: [
+      "Bloomberg-style dashboards without the cost",
+      "Comparing fundamentals and analyst estimates",
+      "Building custom watchlists and screens",
+      "Overlaying equities with macro data"
+    ],
+    faqs: [
+      { q: "Is Koyfin really free?", a: "Yes — there's a capable free tier. Paid plans add longer history, more watchlists/dashboards, and advanced features for power users." },
+      { q: "Koyfin vs a Bloomberg Terminal?", a: "Koyfin covers a large share of what most retail and many professional users need at a tiny fraction of the cost, though a full Bloomberg Terminal still goes far deeper for institutions." },
+      { q: "Does Koyfin cover global markets?", a: "Yes, it includes international equities, ETFs, funds and macro data, not just US listings." }
+    ]
   },
 
   // Screeners
@@ -115,7 +145,22 @@ window.SEED_LINKS = [
     url: 'https://stockanalysis.com',
     description: 'Clean, free financial statements, ratios, and a capable screener with none of the usual paywall friction.',
     sections: ['stocks'],
-    group: 'Screeners'
+    group: 'Screeners',
+    overview: [
+      "Stock Analysis (stockanalysis.com) has become a favourite for its clean, fast, genuinely free access to financial data. Where many sites bury statements behind paywalls, it presents income statements, balance sheets, cash flows and ratios clearly and without friction.",
+      "Alongside per-company data it offers a capable stock screener, IPO and earnings calendars, and ETF information — all in a refreshingly uncluttered interface. It's an excellent first stop for fundamental research before reaching for heavier paid tools."
+    ],
+    bestFor: [
+      "Free, no-paywall financial statements and ratios",
+      "A fast, clean screener for stocks and ETFs",
+      "Quick fundamental checks on any ticker",
+      "IPO and earnings calendars"
+    ],
+    faqs: [
+      { q: "Is Stock Analysis really free?", a: "The core financials, ratios, screener and calendars are free. There's an optional Pro subscription for deeper history, more screening criteria and extra export features." },
+      { q: "How reliable is the data?", a: "It's well-regarded for everyday research and pulls from standard financial sources, though for critical decisions you should still verify against primary filings on SEC EDGAR." },
+      { q: "Does it cover international stocks?", a: "Coverage is strongest for US-listed companies and ETFs, with some international tickers." }
+    ]
   },
 
   // Fundamentals & Research
@@ -124,7 +169,22 @@ window.SEED_LINKS = [
     url: 'https://www.morningstar.com',
     description: 'Independent research, star ratings, and fair-value estimates — especially strong for funds and long-term investors.',
     sections: ['stocks'],
-    group: 'Fundamentals & Research'
+    group: 'Fundamentals & Research',
+    overview: [
+      "Morningstar is one of the most respected names in independent investment research, best known for its star ratings and analyst-driven fair-value estimates. It's a go-to for long-term investors who want a considered second opinion rather than just raw data.",
+      "Its coverage is especially strong for mutual funds and ETFs — where its ratings and the 'economic moat' framework are widely cited — but it also covers individual stocks with analyst reports and valuation estimates. A free account gives access to much of the data, with Morningstar Investor adding premium analysis and portfolio tools."
+    ],
+    bestFor: [
+      "Independent fund and ETF research and ratings",
+      "Analyst fair-value estimates and moat ratings",
+      "Long-term, valuation-focused investing",
+      "A considered second opinion on holdings"
+    ],
+    faqs: [
+      { q: "What are Morningstar star ratings?", a: "For funds, stars are a backward-looking, risk-adjusted measure of past performance versus peers. For stocks, the star rating reflects price relative to Morningstar's fair-value estimate — not past returns." },
+      { q: "Is Morningstar free?", a: "A free account unlocks a lot of data and articles. Morningstar Investor is a paid subscription adding premium analyst reports, ratings detail and portfolio tools." },
+      { q: "What is an economic moat?", a: "Morningstar's term for a durable competitive advantage — pricing power, network effects, switching costs — that helps a company defend profits over time." }
+    ]
   },
   {
     name: 'Macrotrends',
@@ -342,7 +402,22 @@ window.SEED_LINKS = [
     url: 'https://messari.io',
     description: 'Professional-grade crypto research, curated data, and clear asset profiles for serious due diligence.',
     sections: ['crypto'],
-    group: 'Market Data & Aggregators'
+    group: 'Market Data & Aggregators',
+    overview: [
+      "Messari is a research-first crypto data platform aimed at serious due diligence rather than quick price checks. It curates vetted data and clear asset profiles, cutting through the noise of self-reported metrics that plague parts of the industry.",
+      "It's known for in-depth research reports, structured fundamentals, on-chain and market data, governance tracking, and news intelligence. A free tier covers asset profiles and core data, while Messari Pro and Enterprise add deeper research, screening and analytics for professionals."
+    ],
+    bestFor: [
+      "Serious due diligence and asset research",
+      "Vetted, structured fundamentals and metrics",
+      "In-depth research reports and news intelligence",
+      "Tracking governance and tokenomics"
+    ],
+    faqs: [
+      { q: "Is Messari free?", a: "Core asset profiles, data and some research are free. Messari Pro and Enterprise are paid tiers adding advanced research, screening, charting and analytics." },
+      { q: "Who is Messari for?", a: "Anyone doing genuine research — from diligent retail investors to analysts and funds — who wants curated, reliable data over raw aggregator numbers." },
+      { q: "How is Messari different from CoinGecko or CoinMarketCap?", a: "Aggregators focus on prices and rankings across thousands of coins; Messari leans into vetted data, fundamentals and original research for deeper analysis." }
+    ]
   },
 
   // Derivatives & Futures
@@ -351,7 +426,22 @@ window.SEED_LINKS = [
     url: 'https://www.coinglass.com',
     description: 'Essential derivatives dashboard — funding rates, open interest, and liquidation maps across exchanges.',
     sections: ['crypto'],
-    group: 'Derivatives & Futures'
+    group: 'Derivatives & Futures',
+    overview: [
+      "Coinglass is one of the most widely used dashboards for crypto derivatives data. It aggregates funding rates, open interest, long/short ratios and liquidation data across the major exchanges, giving a clear read on leverage and positioning that spot prices alone can't show.",
+      "Traders use it to gauge when the market is overheated — crowded longs paying high funding, stretched open interest — and to anticipate the liquidation cascades that cause sharp wicks. Most core data is free, making it a staple for anyone watching the futures side of the market."
+    ],
+    bestFor: [
+      "Tracking funding rates and open interest",
+      "Reading long/short positioning and leverage",
+      "Watching liquidation levels and cascades",
+      "Gauging when the market is overheated"
+    ],
+    faqs: [
+      { q: "Is Coinglass free?", a: "Most of the core derivatives data — funding, open interest, liquidations — is free to view, with optional paid features for heavier users." },
+      { q: "What is a funding rate?", a: "A periodic payment between longs and shorts on perpetual futures. Persistently high positive funding means crowded longs paying to stay in — often a sign of an overheated market." },
+      { q: "What does open interest tell me?", a: "The total value of open futures contracts. Rising open interest into a move shows conviction; a sharp drop usually means positions closing or being liquidated." }
+    ]
   },
   {
     name: 'Coinalyze',
@@ -389,14 +479,44 @@ window.SEED_LINKS = [
     url: 'https://dune.com',
     description: 'Query and visualize raw blockchain data with SQL, or browse thousands of community-built dashboards.',
     sections: ['crypto'],
-    group: 'On-Chain Analytics'
+    group: 'On-Chain Analytics',
+    overview: [
+      "Dune is a powerful platform for querying raw blockchain data using SQL and turning it into live charts and dashboards. Instead of relying on someone else's metric, you can ask the blockchain your own questions — and share the answer as an interactive dashboard.",
+      "You don't have to write a single query to get value, though: Dune hosts thousands of community-built dashboards covering protocols, NFTs, DeFi, stablecoins and more. It's become the de-facto place analysts publish on-chain research. A free tier lets you explore and fork dashboards, with paid plans for heavier querying."
+    ],
+    bestFor: [
+      "Querying blockchain data directly with SQL",
+      "Browsing and forking community dashboards",
+      "Building custom on-chain analytics",
+      "Following protocol, DeFi and NFT metrics"
+    ],
+    faqs: [
+      { q: "Do I need to know SQL to use Dune?", a: "No — you can browse and use thousands of existing community dashboards for free. SQL only becomes necessary if you want to build your own custom queries." },
+      { q: "Is Dune free?", a: "Yes, exploring and forking dashboards is free. Paid plans add private queries, higher performance, larger limits and team features." },
+      { q: "Which blockchains does Dune support?", a: "Many — Ethereum and major EVM chains plus others like Solana — so you can analyse activity across ecosystems in one place." }
+    ]
   },
   {
     name: 'Nansen',
     url: 'https://www.nansen.ai',
     description: "Labels millions of wallets so you can follow 'smart money' and track on-chain flows in real time.",
     sections: ['crypto'],
-    group: 'On-Chain Analytics'
+    group: 'On-Chain Analytics',
+    overview: [
+      "Nansen's edge is wallet labelling: it tags millions of on-chain addresses — exchanges, funds, notable traders and projects — so anonymous blockchain activity becomes readable. Instead of staring at hex addresses, you can see what 'Smart Money' is actually doing.",
+      "With those labels it offers dashboards for token flows, smart-money movements, NFT activity, and wallet profiling in near real time. It's a professional-grade tool used to spot accumulation, follow influential players and confirm trends with on-chain behaviour. Plans are subscription-based, with tiers for different depth of access."
+    ],
+    bestFor: [
+      "Following 'smart money' wallets in real time",
+      "Tracking token flows and accumulation",
+      "Profiling wallets and entities via labels",
+      "Confirming trends with on-chain behaviour"
+    ],
+    faqs: [
+      { q: "What makes Nansen unique?", a: "Its wallet-labelling database — tagging millions of addresses — which turns anonymous on-chain data into something you can actually follow, like tracking what funds and profitable traders do." },
+      { q: "Is Nansen free?", a: "Nansen is primarily a paid product with subscription tiers, though it has offered limited free features. It's aimed at serious users who want a real on-chain edge." },
+      { q: "Are wallet labels always correct?", a: "Labels are probabilistic and best used as signals, not certainty. Look for confluence across many wallets rather than acting on a single labelled address." }
+    ]
   },
   {
     name: 'Arkham',
@@ -509,7 +629,22 @@ window.SEED_LINKS = [
     url: 'https://dexscreener.com',
     description: 'Real-time charts and liquidity for DEX pairs across chains — the hub for spotting new tokens.',
     sections: ['crypto'],
-    group: 'DEX & Discovery'
+    group: 'DEX & Discovery',
+    overview: [
+      "DEX Screener is the go-to dashboard for tracking tokens trading on decentralised exchanges. It shows real-time price, volume, liquidity and charts for DEX pairs across dozens of chains — the first place many traders look when a new token starts moving.",
+      "It's built for speed and discovery: trending lists, new-pair feeds, liquidity and transaction data, and quick links to the underlying contracts. That same power demands caution — most tokens here are brand new and unvetted, so DEX Screener is a research and monitoring tool, not a seal of approval."
+    ],
+    bestFor: [
+      "Real-time DEX pair charts and liquidity",
+      "Spotting new and trending tokens early",
+      "Tracking on-chain volume and transactions",
+      "Monitoring positions across many chains"
+    ],
+    faqs: [
+      { q: "Is DEX Screener free?", a: "Yes, the core charts, trending lists and pair data are free. There are optional paid features (like enhanced token profiles) aimed at projects." },
+      { q: "Does a token on DEX Screener mean it's safe?", a: "No. Any token trading on a DEX appears automatically — including scams. Always check liquidity, holders and the contract, and never invest based on a chart alone." },
+      { q: "Which chains does DEX Screener cover?", a: "Dozens, including Ethereum, Solana, BNB Chain, Base, Arbitrum and many more EVM and non-EVM networks." }
+    ]
   },
   {
     name: 'DexTools',
@@ -719,7 +854,22 @@ window.SEED_LINKS = [
     url: 'https://fred.stlouisfed.org',
     description: "The St. Louis Fed's vast, free database of U.S. and global economic series — the macro gold standard.",
     sections: ['macro'],
-    group: 'Economic Data'
+    group: 'Economic Data',
+    overview: [
+      "FRED (Federal Reserve Economic Data), maintained by the Federal Reserve Bank of St. Louis, is the gold standard for free macroeconomic data. It hosts hundreds of thousands of time series — GDP, inflation, interest rates, employment, money supply and far more — from official sources worldwide.",
+      "What makes FRED so useful is how easy it is to chart, combine and transform series: overlay inflation against rates, view year-over-year changes, or build custom comparisons, then export the data. It's the primary source professionals and analysts reach for when they want the real numbers rather than a headline."
+    ],
+    bestFor: [
+      "Pulling official economic data straight from the source",
+      "Charting inflation, rates, GDP and employment",
+      "Combining and transforming economic series",
+      "Putting markets in macro context"
+    ],
+    faqs: [
+      { q: "Is FRED free?", a: "Yes — FRED is a completely free public service of the St. Louis Fed, with no account required, plus a free API for developers." },
+      { q: "What data does FRED cover?", a: "Hundreds of thousands of US and international economic series: inflation, interest rates, GDP, employment, money supply, exchange rates and much more, from official statistical agencies." },
+      { q: "Can I download FRED data?", a: "Yes, every series can be downloaded (CSV/Excel) and there's a robust free API for automated access." }
+    ]
   },
   {
     name: 'Trading Economics',
