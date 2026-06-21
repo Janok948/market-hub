@@ -53,6 +53,7 @@ window.SEED_LINKS = [
     description: 'Veteran technical-analysis suite known for clean point-&-figure charts, market-breadth indicators, and sector-rotation tools.',
     sections: ['stocks'],
     group: 'Charting & Technical Analysis',
+    image: '/assets/screenshots/stockcharts.webp',
     overview: [
       "StockCharts is a long-established technical-analysis platform built specifically for stock and ETF chartists. It's known for clean, reliable charting and a strong library of educational material — including the widely cited ChartSchool reference.",
       "Beyond standard charts, it shines at market-breadth and sector-rotation analysis: point-and-figure charts, relative-strength tools, and curated indicator sets that help you read the health of the whole market, not just one ticker. A free tier covers the basics, with paid plans for real-time data and saved chartlists."
