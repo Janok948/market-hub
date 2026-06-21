@@ -210,6 +210,10 @@ function siteHead(active, prefix) {
     '      <span class="brand-text"><strong>Market Hub</strong><small>Essential tools for crypto &amp; stocks</small></span>\n' +
     '    </a>\n' +
     '    <nav class="site-nav">' + link('tools', prefix + 'index.html', 'Tools') + link('learn', prefix + 'learn/index.html', 'Learn') + '</nav>\n' +
+    '    <form class="site-search" action="' + prefix + 'index.html" method="get" role="search">\n' +
+    '      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>\n' +
+    '      <input type="search" name="q" placeholder="Search tools&hellip;" aria-label="Search tools" autocomplete="off" />\n' +
+    '    </form>\n' +
     '    <div class="actions"><button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle theme"></button></div>\n' +
     '  </div></header>\n';
 }
