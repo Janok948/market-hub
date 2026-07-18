@@ -205,12 +205,12 @@ function siteHead(active, prefix) {
     return '<a class="site-link' + (active === key ? ' active' : '') + '" href="' + href + '">' + label + '</a>';
   }
   return '  <header class="topbar site-head"><div class="bar">\n' +
-    '    <a class="brand" href="' + prefix + 'index.html">\n' +
+    '    <a class="brand" href="/">\n' +
     '      <span class="brand-mark">' + BRAND_MARK + '</span>\n' +
     '      <span class="brand-text"><strong>Market Hub</strong><small>Essential tools for crypto &amp; stocks</small></span>\n' +
     '    </a>\n' +
-    '    <nav class="site-nav">' + link('tools', prefix + 'index.html', 'Tools') + link('learn', prefix + 'learn/index.html', 'Learn') + '</nav>\n' +
-    '    <form class="site-search" action="' + prefix + 'index.html" method="get" role="search">\n' +
+    '    <nav class="site-nav">' + link('tools', '/', 'Tools') + link('learn', '/learn/', 'Learn') + '</nav>\n' +
+    '    <form class="site-search" action="/" method="get" role="search">\n' +
     '      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>\n' +
     '      <input type="search" name="q" placeholder="Search tools&hellip;" aria-label="Search tools" autocomplete="off" />\n' +
     '    </form>\n' +
@@ -344,7 +344,7 @@ function toolPage(t) {
 '<body>\n' +
 siteHead('tools', '../') + '\n' +
 '  <main class="tool-wrap tool">\n' +
-'    <nav class="crumbs"><a href="../index.html">Home</a> &rsaquo; <a href="../index.html?filter=' + sec + '">' + esc(SECTION_LABEL[sec]) + '</a> &rsaquo; ' + esc(t.name) + '</nav>\n' +
+'    <nav class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/?filter=' + sec + '">' + esc(SECTION_LABEL[sec]) + '</a> &rsaquo; ' + esc(t.name) + '</nav>\n' +
 '    <div class="tool-head">\n' +
 '      ' + favHtml(t, 'width="46" height="46"') + '\n' +
 '      <div>\n' +
@@ -383,7 +383,7 @@ overviewHtml + '\n\n' +
 '  </main>\n\n' +
 '  <footer class="legal">\n' +
 '    <p class="disclosure">' + (t.isAff ? 'This page links to ' + esc(t.name) + ' via an affiliate link; we may earn a commission at no extra cost to you. ' : '') + 'Nothing here is financial advice &mdash; always do your own research.</p>\n' +
-'    <p><a href="../index.html">&larr; Back to Market Hub</a> &middot; <a href="../privacy.html">Privacy</a></p>\n' +
+'    <p><a href="/">&larr; Back to Market Hub</a> &middot; <a href="/privacy.html">Privacy</a></p>\n' +
 socialRow() +
 '  </footer>\n' +
 footScript(false) +
@@ -457,7 +457,7 @@ function courseCard(c, hrefPrefix) {
 
 function nextCourseCard(course) {
   if (!course) {
-    return '<a class="next-course nc-done" href="./index.html">' +
+    return '<a class="next-course nc-done" href="/learn/">' +
       '<span class="nc-label">Series complete</span>' +
       '<span class="nc-title">Browse all free courses</span>' +
       '<span class="nc-go">View the library <span class="cc-arr">&rarr;</span></span></a>';
@@ -544,7 +544,7 @@ function coursePage(c, idx) {
     '  <div class="reading-progress"><i></i></div>\n' +
     siteHead('learn', '../') + '\n' +
     '  <main class="course-wrap course" data-course="' + c.slug + '" data-lessons="' + n + '">\n' +
-    '    <nav class="crumbs"><a href="../index.html">Home</a> &rsaquo; <a href="./index.html">Learn</a> &rsaquo; ' + esc(c.title) + '</nav>\n' +
+    '    <nav class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/learn/">Learn</a> &rsaquo; ' + esc(c.title) + '</nav>\n' +
     '    <header class="course-hero">\n' +
     '      <div class="course-badges"><span class="badge badge-' + secKey + '">' + esc(secLabel) + '</span>' +
     '<span class="meta-pill">' + esc(c.level) + '</span>' +
@@ -567,11 +567,11 @@ function coursePage(c, idx) {
     '  </main>\n\n' +
     '  <section class="course-cta">\n' +
     '    <div class="cta-copy"><h2>Found this useful?</h2><p>Get new tools and guides about once a week. No spam.</p></div>\n' +
-    '    <a class="btn primary" href="../index.html#newsletter">Get weekly updates</a>\n' +
+    '    <a class="btn primary" href="/#newsletter">Get weekly updates</a>\n' +
     '  </section>\n' +
     '  <footer class="legal">\n' +
     '    <p class="disclosure">This course may link to tools via affiliate links marked &ldquo;Partner&rdquo;; we may earn a commission at no extra cost to you. Educational content only &mdash; nothing here is financial advice.</p>\n' +
-    '    <p><a href="./index.html">&larr; All courses</a> &middot; <a href="../index.html">Market Hub tools</a> &middot; <a href="../privacy.html">Privacy</a></p>\n' +
+    '    <p><a href="/learn/">&larr; All courses</a> &middot; <a href="/">Market Hub tools</a> &middot; <a href="/privacy.html">Privacy</a></p>\n' +
     socialRow() +
     '  </footer>\n' +
     footScript(true) +
@@ -607,7 +607,7 @@ function learnIndex() {
     '</head>\n<body>\n' +
     siteHead('learn', '../') + '\n' +
     '  <main class="learn-wrap">\n' +
-    '    <nav class="crumbs"><a href="../index.html">Home</a> &rsaquo; Learn</nav>\n' +
+    '    <nav class="crumbs"><a href="/">Home</a> &rsaquo; Learn</nav>\n' +
     '    <header class="learn-hero">\n' +
     '      <span class="learn-kicker">Free courses</span>\n' +
     '      <h1>Learn the skills behind the tools</h1>\n' +
@@ -622,7 +622,7 @@ function learnIndex() {
     '  </main>\n' +
     '  <footer class="legal">\n' +
     '    <p class="disclosure">Educational content only &mdash; nothing here is financial advice. Some tool links are affiliate links marked &ldquo;Partner&rdquo;.</p>\n' +
-    '    <p><a href="../index.html">&larr; Back to Market Hub</a> &middot; <a href="../privacy.html">Privacy</a></p>\n' +
+    '    <p><a href="/">&larr; Back to Market Hub</a> &middot; <a href="/privacy.html">Privacy</a></p>\n' +
     socialRow() +
     '  </footer>\n' +
     footScript(false) +
@@ -631,7 +631,7 @@ function learnIndex() {
 
 function coursesTeaser() {
   var cards = COURSES.map(function (c) { return '      ' + courseCard(c, 'learn/'); }).join('\n');
-  return '    <div class="lt-head"><h2>Free courses</h2><a class="lt-all" href="learn/index.html">View all &rarr;</a></div>\n' +
+  return '    <div class="lt-head"><h2>Free courses</h2><a class="lt-all" href="/learn/">View all &rarr;</a></div>\n' +
     '    <p class="lt-sub">Learn the skills behind the tools &mdash; buying crypto, reading charts, on-chain analysis, and stock investing.</p>\n' +
     '    <div class="learn-grid">\n' + cards + '\n    </div>';
 }
@@ -644,7 +644,7 @@ function privacyPage() {
     description: 'How Market Hub handles your data and privacy.' };
   var body =
     '  <main class="tool-wrap course">\n' +
-    '    <nav class="crumbs"><a href="index.html">Home</a> &rsaquo; Privacy</nav>\n' +
+    '    <nav class="crumbs"><a href="/">Home</a> &rsaquo; Privacy</nav>\n' +
     '    <h1>Privacy Policy</h1>\n' +
     '    <p class="tool-sub">Last updated: ' + updated + '</p>\n' +
     '    <p>Market Hub is a static, privacy-first directory of crypto and stock-market tools. It runs in your browser, needs no account, and collects as little as possible. This page explains what is &mdash; and is not &mdash; collected.</p>\n' +
@@ -707,7 +707,7 @@ function privacyPage() {
     siteHead('', '') + '\n' +
     body +
     '  <footer class="legal">\n' +
-    '    <p><a href="index.html">&larr; Back to Market Hub</a></p>\n' +
+    '    <p><a href="/">&larr; Back to Market Hub</a></p>\n' +
     socialRow() +
     '  </footer>\n' +
     footScript(false) +
@@ -733,17 +733,17 @@ function notFoundPage() {
     '    <span class="nf-code">404</span>\n' +
     '    <h1>This page wandered off</h1>\n' +
     '    <p>The page you&rsquo;re looking for doesn&rsquo;t exist or has moved. Try a search, or jump back in.</p>\n' +
-    '    <form class="nf-search" action="/index.html" method="get" role="search">\n' +
+    '    <form class="nf-search" action="/" method="get" role="search">\n' +
     '      <input type="search" name="q" placeholder="Search tools&hellip;" aria-label="Search tools" autocomplete="off" />\n' +
     '      <button class="btn primary" type="submit">Search</button>\n' +
     '    </form>\n' +
     '    <div class="nf-actions">\n' +
-    '      <a class="btn primary" href="/index.html">Browse all tools</a>\n' +
-    '      <a class="btn" href="/learn/index.html">Free courses</a>\n' +
+    '      <a class="btn primary" href="/">Browse all tools</a>\n' +
+    '      <a class="btn" href="/learn/">Free courses</a>\n' +
     '    </div>\n' +
     '  </main>\n' +
     '  <footer class="legal">\n' +
-    '    <p><a href="/index.html">&larr; Back to Market Hub</a> &middot; <a href="/privacy.html">Privacy</a></p>\n' +
+    '    <p><a href="/">&larr; Back to Market Hub</a> &middot; <a href="/privacy.html">Privacy</a></p>\n' +
     socialRow() +
     '  </footer>\n' +
     footScript(false) +
