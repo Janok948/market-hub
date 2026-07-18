@@ -20,7 +20,7 @@ var ROOT = __dirname;
 var SITE_URL = (process.env.SITE_URL || 'https://example.com').replace(/\/+$/, '');
 var SITE_NAME = 'Market Hub';
 var INDEX_TITLE = 'Market Hub — Best Crypto & Stock Market Tools';
-var INDEX_DESC = 'A curated directory of the best tools for crypto and stock-market research — charting, market data, on-chain analytics, screeners, news and more, each with a description.';
+var INDEX_DESC = 'A curated directory of the best crypto and stock-market research tools — charting, market data, on-chain analytics, screeners, news and more.';
 var OG_IMAGE = SITE_URL + '/assets/og-cover.png';  // PNG previews reliably on X/Facebook/LinkedIn
 var CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'contact@getmarkethub.com';  // override via CONTACT_EMAIL env var
 
@@ -795,6 +795,8 @@ function seoBlock() {
   var sameAs = SOCIALS.filter(function (s) { return s.href; }).map(function (s) { return s.href; });
   if (sameAs.length) org.sameAs = sameAs;
   return [
+    '  <title>' + esc(INDEX_TITLE) + '</title>',
+    '  <meta name="description" content="' + esc(INDEX_DESC) + '" />',
     '  <link rel="canonical" href="' + esc(SITE_URL) + '/" />',
     '  <meta name="robots" content="index, follow" />',
     '  <meta property="og:type" content="website" />',
@@ -849,13 +851,15 @@ fs.writeFileSync(path.join(ROOT, 'privacy.html'), privacyPage());
 fs.writeFileSync(path.join(ROOT, '404.html'), notFoundPage());
 COURSES.forEach(function (c, i) { fs.writeFileSync(path.join(learnDir, c.slug + '.html'), coursePage(c, i)); });
 
+var LASTMOD = new Date().toISOString().slice(0, 10);  // YYYY-MM-DD build date — a freshness hint for crawlers
+function url(loc, priority) { return '  <url><loc>' + loc + '</loc><lastmod>' + LASTMOD + '</lastmod><priority>' + priority + '</priority></url>'; }
 var urls = [
-  '  <url><loc>' + SITE_URL + '/</loc><priority>1.0</priority></url>',
-  '  <url><loc>' + SITE_URL + '/learn/</loc><priority>0.8</priority></url>',
-  '  <url><loc>' + SITE_URL + '/privacy.html</loc><priority>0.3</priority></url>'
+  url(SITE_URL + '/', '1.0'),
+  url(SITE_URL + '/learn/', '0.8'),
+  url(SITE_URL + '/privacy.html', '0.3')
 ];
-COURSES.forEach(function (c) { urls.push('  <url><loc>' + SITE_URL + '/learn/' + c.slug + '.html</loc><priority>0.8</priority></url>'); });
-tools.forEach(function (t) { urls.push('  <url><loc>' + SITE_URL + '/tools/' + t.slug + '.html</loc><priority>0.7</priority></url>'); });
+COURSES.forEach(function (c) { urls.push(url(SITE_URL + '/learn/' + c.slug + '.html', '0.8')); });
+tools.forEach(function (t) { urls.push(url(SITE_URL + '/tools/' + t.slug + '.html', '0.7')); });
 var sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n' +
   '<urlset xmlns="http://www.w3.org/2000/sitemaps/0.9">\n' + urls.join('\n') + '\n</urlset>\n';
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap);
